@@ -1,0 +1,998 @@
+#!/usr/bin/ruby
+#
+# = cgmonitor
+#
+# == Summary
+#
+# A monitor for CommuniGate or UNIX log files. See CGMonitor or run with --help
+# for more information.
+#
+# == Author
+#
+# Payton Swick, 2006-2008
+#
+# == License
+#
+# Creative Commons Attribution-Non-Commercial
+#
+# http://creativecommons.org/licenses/by-nc/2.5/
+#
+
+# Copied from ActiveSupport for time mathematics.
+class Numeric #:nodoc:
+  def seconds
+    self
+  end
+  alias :second :seconds
+
+  def minutes
+    self * 60
+  end
+  alias :minute :minutes
+
+  def hours
+    self * 60.minutes
+  end
+  alias :hour :hours
+
+  def days
+    self * 24.hours
+  end
+  alias :day :days
+
+  def weeks
+    self * 7.days
+  end
+  alias :week :weeks
+
+  def months
+    self * 30.days
+  end
+  alias :month :months
+
+  def years
+    (self * 365.25.days).to_i
+  end
+  alias :year :years
+end
+
+
+class Hash
+  # Recursively replace key names that should be symbols with symbols.
+  def key_strings_to_symbols!
+    r = Hash.new
+    self.each_pair do |k,v|
+      if ((k.kind_of? String) and k =~ /^:/)
+        v.key_strings_to_symbols! if v.kind_of? Hash and v.respond_to? :key_strings_to_symbols!
+        r[k.slice(1..-1).to_sym] = v 
+      else
+        v.key_strings_to_symbols! if v.kind_of? Hash and v.respond_to? :key_strings_to_symbols!
+        r[k] = v 
+      end
+    end
+    self.replace(r)
+  end
+end
+
+
+class Pathname
+  # If this is a directory, returns the most recently modified 
+  # file in this directory. Otherwise, return itself. If _matching_
+  # is specified, only return files where filename =~ _matching_.
+  #
+  # Returns nil if no files (or no matching files) are found.
+  def most_recent_file(matching=/./)
+    return self unless self.directory?
+    files = self.entries.collect { |file| self+file }.sort { |file1,file2| file1.mtime <=> file2.mtime }
+    files.reject! { |file| ((file.file? and file.to_s =~ matching) ? false : true) }
+    files.last
+  end
+end
+
+
+class Time
+  # Return the time difference (as a Float) between now and a specified older Time or parse-able String.
+  #   a = Time.now
+  #   Time.since(a) # => 8.920116
+  #   a.since(a) # => 0.0
+  #   Time.since '11:30' # => 28.111561
+  #   Time.since '9am' # => 9138.288258
+  def self.since(older_time)
+    Time.now.since(older_time)
+  end
+
+  # Return the time difference (as a Float) between now and a specified older Time or parse-able String.
+  #   a = Time.now
+  #   Time.since(a) # => 8.920116
+  #   a.since(a) # => 0.0
+  #   Time.since '11:30' # => 28.111561
+  #   Time.since '9am' # => 9138.288258
+  def since(older_time)
+    self - (older_time.kind_of?(Time) ? older_time : Time.parse(older_time))
+  end
+end
+
+
+# A monitor for CommuiGate log files. Basically it tails the most recent
+# CommuniGate or UNIX log files and allows plugins to take actions based on the
+# log entry lines or at specific times.  
+#
+# == Plugins
+#
+# Plugins are ruby files ending with "-plugin.rb" stored in the plugins/
+# directory.  You may choose to activate all the available plugins at start (the
+# default) or specific plugins that you choose.  Run with --help for a list of
+# options.
+#
+# === Plugin Action Methods
+#
+# A Plugin file must define a class which subclasses CGMonitor::Plugin.  The
+# Plugin will be evaluated when the CGMonitor starts, and instantiated if the
+# plugin was chosen to be activated.  Just after being created, the
+# Plugin#start_up method, if any, will be called.  For example:
+#
+#   class Foo < CGMonitor::Plugin
+#     def start_up
+#       puts "Let's go!"
+#     end
+#   end
+#
+# A Plugin may then implement the method 'every_line' (Plugin#every_line) which
+# will be called for each line that is read from the current log file, being
+# passed the line as a String.  It can then take any actions you like. For
+# example:
+#
+#   class Foo < CGMonitor::Plugin
+#     def every_line(line)
+#       puts "This line is long" if line.size > 120
+#     end
+#   end
+#
+# Alternatively a plugin may perform an operation every second or every minute
+# by implementing the methods 'every_second' or 'every_minute'
+# (Plugin#every_second and Plugin#every_minute). For example:
+#
+#   class Foo < CGMonitor::Plugin
+#     def every_minute
+#       puts "Another minute has passed and I'm still waiting."
+#     end
+#   end
+#
+# A plugin may also implement the method 'signal' (Plugin#signal) which will be
+# called when the cgmonitor process receives a SIGHUP (1) signal.  For example:
+#
+#   class Foo < CGMonitor::Plugin
+#     def signal
+#       puts "Aah! A signal!"
+#     end
+#   end
+#
+# Finally, any clean-up can be performed by overriding the method 'shut_down'
+# (Plugin#shut_down) which will be called when the plugin is stopped.
+#
+#   class Foo < CGMonitor::Plugin
+#     def shut_down 
+#       puts "We're done here."
+#     end
+#   end
+#
+# === Plugin Output Methods
+#
+# There are several helper methods that a Plugin may use including three
+# logging/output methods (Plugin#info_message, Plugin#warning_message,
+# Plugin#error_message) and a built-in emailer method (Plugin#send_email, which
+# will only actually send an email if emailing is enabled when the Monitor was
+# started; also see Plugin#send_email_buffered which will send emails on a
+# schedule).
+#
+#   class Foo < CGMonitor::Plugin
+#     def every_line(line)
+#       if line =~ /something important/
+#         warning_message("Something important is going on.")
+#         send_email_buffered("Something important is going on.")
+#       else
+#         info_message("Just another boring line.")
+#       end
+#     end
+#   end
+#
+# === Plugin Configuration
+#
+# Plugins may also use configuration options specified in the cgmonitor YAML
+# config file (this defaults to cgmonitor.cfg if you are using the init script).
+# This configuration is read on startup and again every time cgmonitor receives
+# an HUP signal (see the Plugin#signal method for more you can do with that).
+#
+# Options for a plugin are specified under the plugin Class name and can be
+# accessed using the Plugin#my_options accessor (you may also set options using
+# Plugin#my_options=). For example, if the plugin was called TestPlugin, options
+# for this plugin may be defined as:
+#
+#   :TestPlugin: 
+#     :search_phrase: "testing please"
+#     :max_count: 16
+#
+# You could then access those variables as follows:
+#
+#   info_message("Searching for '#{my_options[:search_phrase]}'")
+#
+# === Plugin Example
+#
+# Here's an example plugin:
+#
+#   class TestPlugin < CGMonitor::Plugin
+#     def start_up 
+#       info_message('Starting the TestPlugin plugin.')
+#     end
+#     def every_line(line)
+#       return unless line =~ /test plugin/
+#       info_message "this line contains the phrase 'test plugin': #{line}" 
+#       send_email "this line contains the phrase 'test plugin': #{line}"
+#     end
+#   end
+#
+# == Installation and Usage
+#
+# You can use cgmonitor as a command-line program, or you can easily use it as
+# a daemon by using the included init script in the program directory
+# (init/cgmonitor).  Here's one way to install it (if you do not install in
+# /opt/CGScripts/cgmonitor, you will need to edit the init script to change
+# CGMONITOR_HOME).
+#
+#   CGMONITOR_HOME=/opt/CGScripts/cgmonitor
+#   cd $CGMONITOR_HOME; 
+#   sudo ln -s $CGMONITOR_HOME/init.d/cgmonitor /etc/init.d/;
+#   sudo chkconfig --add cgmonitor; # For RedHat distros only.
+#
+# Then you should probably create a config file, like this:
+#
+#   cat > $GMONITOR_HOME/cgmonitor.cfg
+#   ---
+#   email_to: cgmonitor@domain.com
+#   smtp_host: smtp.domain.com
+#   requested_plugins:
+#     - CGPMcAfeeCounter
+#     - CGPClamAVCrash
+#     - CorruptedMailbox
+#   log_paths:
+#     - /SystemLogs/
+#   daemon: true
+#
+# To check if cgmonitor is running:
+#
+#   /etc/init.d/cgmonitor status
+#
+# To start it:
+#
+#   /etc/init.d/cgmonitor start 
+#
+# To stop it:
+#
+#   /etc/init.d/cgmonitor stop 
+#
+# To restart it:
+#
+#   /etc/init.d/cgmonitor restart 
+#
+# To reload the config file (<b>note that this will override any
+# command-line options with the config options</b>):
+#
+#   /etc/init.d/cgmonitor reload
+#
+# If you're running as a daemon, all output will go to your computer's Syslog,
+# usually something like /var/log/messages.
+#
+module CGMonitor
+
+  require 'optparse'
+  require 'pathname'
+  require 'socket'
+  require 'syslog'
+  require 'yaml'
+  require 'tail'
+  HOSTNAME = Socket.gethostname
+
+  # The abstract parent of all Plugin classes.  Subclass Plugin to create a
+  # CGMonitor plugin.  A plugin must be in a ruby file ending with "-plugin.rb"
+  # in the plugins/ directory.  It must contain a subclass of Plugin with at
+  # least a Plugin#every_line method that will be called and passed a String for
+  # every line read from the log file or the every_second or every_minute
+  # methods.  
+  # 
+  # There are also methods called when the plugin is initialized (start_up) and
+  # when the plugin shuts down (shut_down).
+  # 
+  # See CGMonitor for an example plugin and more detailed information.
+  class Plugin 
+    # A list of classes to be used as plugins.
+    @registered_plugins = []
+
+    class << self; attr_reader :registered_plugins end
+
+    def Plugin.inherited(sub) #:nodoc:
+      Plugin.registered_plugins << sub
+      begin
+        Syslog.info("registered plugin: #{sub}")
+      rescue
+      end
+    end
+
+    # If set to true, this will call send_buffered_emails before shut down.
+    # See Plugin#send_email_buffered for more info.
+    attr_accessor :ensure_emails_are_sent
+
+    # If set higher than 0, when the number of emails queued by
+    # Plugin#send_email_buffered reaches this number, all the messages in the
+    # queue will be sent, even if the frequency has not been reached. 
+    attr_accessor :max_buffered_emails
+
+    # Configuration options for this plugin.  See Plugin#load_my_options.
+    attr_accessor :my_options
+
+    # The file (Pathname) that's currently being acted on by this plugin, or was
+    # last acted on by this plugin.  This is set by Monitor#pass_line_to_plugins
+    # just before Plugin#every_line is called.
+    attr_accessor :current_file
+
+    # The Monitor that controls this Plugin.
+    attr_accessor :monitor
+
+    # Don't override this method.  Use start_up instead.
+    def initialize(options)
+      self.my_options = options
+    end
+
+    # Log an error message.
+    def error_message(text,include_filename=nil)
+      text = prepend_info(text, include_filename)
+      Syslog.crit(text)
+      $stderr.puts(text)
+    end
+
+    # Log a warning message.
+    def warning_message(text,include_filename=nil)
+      text = prepend_info(text, include_filename)
+      Syslog.warning(text)
+      $stderr.puts(text)
+    end
+
+    # Log an info message.
+    def info_message(text,include_filename=nil)
+      text = prepend_info(text, include_filename)
+      Syslog.info(text)
+      $stderr.puts(text)
+    end
+
+    # Log a debug message.
+    def debug_message(text,include_filename=nil)
+      return if @monitor.nil?
+      return unless @monitor.debug?
+      text = prepend_info(text, include_filename)
+      Syslog.info(text)
+      $stderr.puts(text)
+    end
+
+    # Send an IM message, if the Monitor#send_im is configured to do
+    # so.
+    def send_im(text,include_filename=nil)
+      if @monitor.nil?
+        warning_message("send_im failed for the plugin #{self.class.to_s} because the monitor is undefined.")
+        return false
+      end
+      text = prepend_info(text, include_filename)
+      @monitor.send_im(text)
+    end
+
+    # Send an email message, if the Monitor#send_email is configured to do
+    # so.  This sends an immediate email; see Plugin#send_email_buffered for
+    # possibly a better option.
+    def send_email(text,include_filename=nil)
+      if @monitor.nil?
+        warning_message("send_email failed for the plugin #{self.class.to_s} because the monitor is undefined.")
+        return false
+      end
+      text = prepend_info(text, include_filename)
+      @monitor.send_email(text, self.class.to_s)
+    end
+
+    # Return the name of the node we're currently looking at, if we can find 
+    # it. Otherwise return 'unknown'.
+    def get_node
+      node = nil
+      node = $1 if self.current_file.to_s =~ /\/(\we\d)\//
+        node = 'unknown' if node.nil? or node.empty?
+      node
+    end
+
+    # Sends all buffered emails now.  See send_email_buffered for more details.
+    # You should never need to call this directly; it is used if
+    # ensure_emails_are_sent is set on this plugin.
+    def send_buffered_emails(include_filename=nil)
+      return unless @send_email_warning_messages
+      unless @send_email_warning_messages.empty?
+        info_message("Sending all #{@send_email_warning_messages.size} queued messages.")
+        mark_time(:first_send_email_call)
+        message = @send_email_warning_messages.join("\n\n")
+        @send_email_warning_messages.clear
+        send_email(message, include_filename)
+        @send_email_warning_sent[get_node] = true
+        info_message("send_email_buffered finished sending all queued messages.")
+      end
+    end
+
+    # Returns true if ensure_emails_are_sent is set to true on this plugin which
+    # will make sure that if the plugin shuts down before all emails in
+    # send_email_buffered are sent, then send_buffered_emails will be called to
+    # force delivery.
+    def ensure_emails_are_sent?
+      self.ensure_emails_are_sent
+    end
+
+    # Like send_email, but only send one every frequency seconds including all
+    # buffered emails for this plugin. frequency defaults to one hour, but can
+    # be reset every time this function is called.  If there are queued emails
+    # when the plugin is shut down, they will not be sent unless
+    # ensure_emails_are_sent is set to true.  If you need to send an email
+    # immediately, you can use Plugin#send_email instead.
+    def send_email_buffered(text,frequency=nil,include_filename=nil)
+      node = get_node
+      @send_email_warning_messages ||= Array.new
+      @send_email_warning_messages << "[at #{Time.now.strftime('%Y-%m-%d %H:%M')}] "+text.to_s
+      @send_email_warning_sent ||= Hash.new
+      @send_email_buffered_frequency ||= 1.hour
+      @send_email_buffered_frequency = frequency if frequency and frequency.is_a? Integer
+      mark_time(:first_send_email_call) unless time_at_mark(:first_send_email_call)
+      @include_filename = include_filename
+
+      unless @send_email_buffered_thread and @send_email_buffered_thread.alive?
+        @send_email_buffered_thread = Thread.new do
+          info_message("send_email_buffered is starting a new thread to send #{@send_email_warning_messages.size} queued messages.")
+          loop do
+            while (not @send_email_warning_messages.empty?)
+              info_message("send_email_buffered is considering sending #{@send_email_warning_messages.size} queued messages. #{time_since_mark(:first_send_email_call) / 60} minutes since the last send. Sending every #{@send_email_buffered_frequency / 60} minutes.")
+              if ((self.max_buffered_emails and self.max_buffered_emails > 0 and @send_email_warning_messages.size >= self.max_buffered_emails) or (time_since_mark(:first_send_email_call) > @send_email_buffered_frequency))
+                @send_email_warning_sent.clear
+                mark_time(:first_send_email_call)
+              end
+              send_buffered_emails(@include_filename) unless @send_email_warning_sent[node]
+              sleep 5.minutes
+            end
+            info_message("send_email_buffered thread is waiting; no messages to send.")
+            sleep 5.minutes
+          end
+        end
+      else
+        info_message("send_email_buffered is not starting a new mail thread; one is already running. #{@send_email_warning_messages.size} messages to send; last sent at #{time_at_mark(:first_send_email_call).to_s}")
+      end
+    end
+
+    # Loads any options in the cgmonitor YAML config file under the name of this
+    # plugin and stores them in the @my_options attribute of this Plugin.
+    #
+    # For example, if the plugin was called TestPlugin, options for this plugin
+    # may be defined as:
+    #
+    #   :TestPlugin: 
+    #     :search_phrase: "testing please"
+    #     :max_count: 16
+    #
+    # You shouldn't need to ever call this method directly.  It will be called
+    # when a signal is received by the cgmonitor process.
+    def load_my_options
+      if @monitor.nil?
+        warning_message("my_options failed for the plugin #{self.class.to_s} because the monitor is undefined.")
+        return {}
+      end
+      @my_options ||= {}
+      @my_options.merge!(@monitor.options_for(self))
+    end
+
+    # Sets a time mark with a given label.  See time_since_mark and time_at_mark.
+    def mark_time(label=:mark)
+      @timer_marked_times ||= Hash.new
+      @timer_marked_times[label] = Time.now
+    end
+
+    # After marking an optionally labeled time with mark_time, you can retrieve
+    # the time marked with time_at_mark.  Also see time_since_mark.
+    def time_at_mark(label=:mark)
+      @timer_marked_times ||= Hash.new
+      return @timer_marked_times[label] if @timer_marked_times[label]
+      nil
+    end
+
+    # After marking an optionally labeled time with mark_time, you can retrieve
+    # the time difference between that time and the current time with
+    # time_since_mark.  The time difference is provided in seconds as an
+    # integer.  You can also specify an optional time on which to perform the
+    # difference.
+    def time_since_mark(label=:mark, time=Time.now)
+      @timer_marked_times ||= Hash.new
+      return (time - @timer_marked_times[label]).to_i if @timer_marked_times[label]
+      nil
+    end
+
+    protected
+
+    def prepend_info(text, include_filename=nil) # :nodoc:
+      if current_file and (include_filename == true or (include_filename.nil? and self.respond_to? :every_line))
+        "#{self.class.to_s} (#{current_file}): "+text.to_s
+      else
+        "#{self.class.to_s}: "+text.to_s
+      end
+    end
+  end
+
+
+  # A continuous log tailer which registers plugins, activates plugins, and
+  # calls Plugin#every_line for every activated plugin for every log line read.
+  class Monitor
+
+    attr_reader :options
+    attr_accessor :config_file
+
+    def initialize(options={})
+      @options = options
+      @tail_waiting = 0
+      @active_plugins = []
+      @data_to_email = []
+      debug_message("Monitor created with options: #{options.inspect}")
+    end
+
+    def error_message(text)
+      begin
+        Syslog.crit(text)
+      rescue RuntimeError
+      end
+      $stderr.puts(text)
+      send_email(text)
+      send_im(text)
+    end
+
+    def warning_message(text)
+      begin
+        Syslog.warning(text)
+      rescue RuntimeError
+      end
+      $stderr.puts(text)
+    end
+
+    def info_message(text)
+      begin
+        Syslog.info(text)
+      rescue RuntimeError
+      end
+      $stderr.puts(text) if @options[:verbose]
+    end
+
+    def debug_message(text)
+      return unless self.debug?
+      begin
+        Syslog.info(text)
+      rescue RuntimeError
+      end
+      $stderr.puts(text)
+    end
+
+    def debug?
+      @options[:debug] || false
+    end
+
+    # Calls load on all files in the plugins_path ending with "-plugin.rb".
+    def register_plugins
+      plugin_directory = Pathname.new(@options[:plugins_path])
+      plugin_directory.entries.each { |p| next unless p.to_s =~ /\w-plugin\.rb$/; load plugin_directory+p }
+    end
+
+    # Calls activate_plugin on all classes in Plugin::registered_plugins or
+    # requested_plugins, if specific classes were requested on the command-line.
+    def activate_plugins
+      if @options[:requested_plugins].empty?
+        Plugin::registered_plugins.each { |p| activate_plugin(p.to_s) }
+      else
+        @options[:requested_plugins].each { |p| activate_plugin(p.to_s) }
+      end
+    end
+
+    def validate_address(addr)
+      valid_email = /\A[\w\._%-]+@[\w\.-]+\.[a-zA-Z]{2,4}\z/
+      return true if addr =~ valid_email
+      warning_message("'#{addr}' is not a valid email address.")
+      return false
+    end
+
+    # Start monitoring the log files in @options[:log_paths].  If
+    # @options[:log_paths] is empty, we monitor @options[:default_log_path].
+    def start
+      trap_signals
+
+      @options[:log_paths] << @options[:default_log_path] if @options[:log_paths].empty?
+
+      threads = []
+      begin
+
+        # Start the timers for every_second and every_minute.
+        threads << Thread.new { start_timer }
+
+        # Start tailing the log files.
+        @options[:log_paths].each do |log_path|
+          log_path = Pathname.new(log_path) unless log_path.kind_of? Pathname
+          threads << Thread.new do
+            loop do
+              file = nil
+              begin
+                # If there's not a new file in the log path, wait tail_interval
+                # and try again; don't wait longer than max_tail_wait.
+                while new_file = log_path.most_recent_file and new_file.to_s == file.to_s
+                  sleep @options[:tail_interval]
+                  @tail_waiting += @options[:tail_interval]
+                  if @tail_waiting > @options[:max_tail_wait]
+                    error_message("Waited #{@tail_waiting} seconds for a new log file, but couldn't find one.")
+                    new_file = nil
+                    break 
+                  end
+                end
+                file = new_file
+                @tail_waiting = 0
+
+                if file.nil?
+                  warning_message("No recent file was found in path: #{log_path}.")
+                  break 
+                end
+                info_message("Most recent file: #{file}")
+
+                debug_message("Starting to tail file #{file}.")
+                File::Tail::Logfile.tail(file, :backward => @options[:lines_to_rewind], :interval => @options[:tail_interval]) { |line| break if end_of_communigate_file?(line); pass_line_to_plugins(line, file) }
+                debug_message("Done tailing file #{file}.")
+                break if log_path.file? # Don't continue unless there's the chance of a newer file.
+
+              rescue Errno::ENOENT => e
+                info_message("A file error occurred during monitoring: #{e}")
+                next
+              end
+            end
+          end
+        end
+
+      threads.each { |t| t.join }
+      rescue Exception => e
+        exit if e.to_s == 'exit'
+        error_message("An exception occurred during monitoring: #{e}")
+        raise
+      end
+    end
+
+    def send_email(data=nil, subject='')
+      debug_message("Calling Monitor#send_email.")
+      return false unless address = @options[:email_to] and validate_address(address) 
+      @data_to_email << data if data
+
+      send_the_message = true
+      difference = 0
+      send_the_message = false if @last_message_sent and difference = (Time.now - @last_message_sent) and difference < @options[:delay_emails_for]
+
+      unless send_the_message
+        info_message("Email data queued because the last email was sent #{difference} seconds ago (waiting until #{@options[:delay_emails_for]}). Email data queue size: #{@data_to_email.size}")
+      else
+        subj = @options[:email_subject].to_s
+        subj += " (#{subject})" if subject and not subject.empty?
+        msg = <<END_OF_MESSAGE
+From: #{@options[:from_alias]} <#{@options[:from_address]}>
+To: #{address}
+Subject: #{subj}
+
+cgmonitor on #{HOSTNAME} said:
+
+END_OF_MESSAGE
+        msg += "#{@data_to_email.pop}\n" while !@data_to_email.empty?
+
+        info_message("Sending email to #{address}")
+        @last_message_sent = Time.now
+        Net::SMTP.start(@options[:smtp_host]) { |smtp| smtp.send_message(msg, @options[:from_address], address) }
+        debug_message("Monitor#send_email complete.")
+      end
+    end
+
+    def send_im(data)
+      return unless addresses = @options[:jabber_to] and addresses.kind_of? Array and addresses.size > 0
+      addresses.each { |address| return false unless validate_address(address) }
+      msg = "cgmonitor on #{HOSTNAME} said: "
+      msg += "#{data}" if data
+      info_message("Sending IM to: #{addresses.join(', ')}")
+      begin
+        Timeout.timeout(8) do
+          jabber = Jabber::Simple.new(@options[:jabber_id], @options[:jabber_password])
+          addresses.each { |address| jabber.deliver(address, msg) }
+        end
+      rescue Exception => e
+        info_message('Error while trying to send IM: '+e.to_s)
+      end
+    end
+
+    # Load the configuration file and overwrite the options with its data.
+    def load_config(config_file=nil)
+      config_file ||= @config_file
+      begin
+        warning_message("Reading config file.")
+        loaded_options = File.open(config_file) { |f| YAML.load(f) }
+        loaded_options.each_pair { |k,v| @options[k.to_sym] = v }
+        @options.key_strings_to_symbols!
+      rescue Exception => e
+        warning_message("An exception ocurred while reading config file '#{config_file}': #{e}")
+      end
+    end
+
+    # Call and pass a plugin to return any config file options for that plugin.
+    def options_for(plugin)
+      unless @active_plugins.include? plugin
+        warning_message("options_for failed; active plugins do not include #{plugin}")
+        return {}
+      end
+      @options[plugin.class.to_s.to_sym] || {}
+    end
+
+    private 
+
+    def trap_signals
+      # Die gracefully with CTRL-C.
+      Kernel.trap(:INT) { info_message("Signal received. cgmonitor is stopping."); shut_down_plugins; Syslog.close; exit }
+      # Die gracefully with a pidify kill.
+      Kernel.trap(:TERM) { info_message("Signal received. cgmonitor is stopping."); shut_down_plugins; Syslog.close; exit }
+      # With a HUP signal, pass the signal to our plugins.
+      Kernel.trap(:HUP) { info_message("HUP signal received. Reloading config and calling signal on my plugins."); load_config; pass_signal_to_plugins }
+    end
+
+    def start_timer
+      info_message("Starting the timer.")
+      timer_count = 0
+      loop do
+        timer_count += 1
+        begin
+          sleep 1.second
+          call_every_second_on_plugins()
+          call_every_minute_on_plugins() if (timer_count % 60) == 0
+          send_email if (timer_count % 60) == 0 and !@data_to_email.empty?
+        rescue Exception => e
+          info_message("An exception occurred in the timer: #{e}")
+          break
+        end
+      end
+      info_message("Ending the timer.")
+    end
+
+    # Instantiates a (registered) Plugin and adds it to the list of active
+    # plugins. Returns false if it fails.
+    def activate_plugin(name)
+      begin
+        return false unless n = get_plugin(name)
+        info_message("activating plugin: #{n.class}")
+        n.monitor = self
+        @active_plugins << n
+	n.start_up if n.respond_to? :start_up
+        return true
+      rescue Exception=>e
+        warning_message("problem activating plugin: #{name} (#{e})")
+      end
+      return false
+    end
+
+    # Instantiates a (registered) Plugin and returns it, or returns false if
+    # it failed.
+    def get_plugin(name)
+      begin
+        klass = eval(name)
+        if Plugin.registered_plugins.include? klass
+          k = klass.new(@options[name.to_sym] || {})
+	  return k
+        else
+          warning_message("cannot get plugin, plugin not registered: #{klass}")
+        end
+      rescue Exception=>e
+        warning_message("cannot get plugin, plugin not found: #{name} (#{e})")
+      end
+      return false
+    end
+
+    # Returns true if the logfile has ended (not the same as EOF).
+    def end_of_communigate_file?(line)
+      return true if line =~ /^\s*\*END\*/
+      return false
+    end
+
+    def call_every_second_on_plugins
+      @active_plugins.each do |plugin|
+        begin
+          plugin.every_second if plugin.respond_to? :every_second
+        rescue Exception=>e
+          warning_message("An exception ocurred while calling every_second on plugin #{plugin.class}: #{e}")
+        end
+      end
+    end
+
+    def call_every_minute_on_plugins
+      debug_message("Calling call_every_minute_on_plugins.")
+      @active_plugins.each do |plugin|
+        begin
+          plugin.every_minute if plugin.respond_to? :every_minute
+        rescue Exception=>e
+          warning_message("An exception ocurred while calling every_minute on plugin #{plugin.class}: #{e}")
+        end
+      end
+    end
+
+    def pass_line_to_plugins(line, file)
+      debug_message("Passing line to plugins: #{line}")
+      @active_plugins.each do |plugin|
+        begin
+          plugin.current_file = file if plugin.respond_to? :current_file
+          plugin.every_line(line) if plugin.respond_to? :every_line
+        rescue Exception=>e
+          warning_message("An exception ocurred while passing a line to plugin #{plugin.class}: #{e}")
+        end
+      end
+    end
+
+    def pass_signal_to_plugins
+      @active_plugins.each do |plugin|
+        begin
+          plugin.load_my_options if plugin.respond_to? :load_my_options
+          plugin.signal if plugin.respond_to? :signal
+        rescue Exception=>e
+          warning_message("An exception ocurred while passing a signal to plugin #{plugin.class}: #{e}")
+        end
+      end
+    end
+
+    # Sends a message to the plugins that we're shutting down, in case they
+    # want to perform any clean-up.  This calls the method Plugin#shut_down on
+    # each plugin.
+    def shut_down_plugins
+      @active_plugins.each do |plugin|
+        begin
+          plugin.shut_down if plugin.respond_to? :shut_down
+          plugin.send_buffered_emails if plugin.respond_to? :send_buffered_emails and plugin.ensure_emails_are_sent?
+        rescue Exception=>e
+          warning_message("An exception ocurred while shutting down plugin #{plugin.class}: #{e}")
+        end
+      end
+    end
+end
+
+###################################################################
+
+if $0 == __FILE__
+  def self.info_message(text)
+    Syslog.info(text)
+    $stderr.puts(text)
+  end
+
+  default_options = {
+    :default_log_path => '/var/CommuniGate/SystemLogs', 
+    :log_paths => [],
+    :tail_interval => 5.0, 
+    :max_tail_wait => 4*60, 
+    :jabber_id => '',
+    :jabber_password => '',
+    :smtp_host => 'localhost',
+    :from_alias => 'cgmonitor program',
+    :from_address => 'postmaster@bc.edu',
+    :email_subject => "cgmonitor alert on #{HOSTNAME}",
+    :delay_emails_for => 60*3,
+    :plugins_path => 'plugins',
+    :max_eof_count => 2,
+    :lines_to_rewind => 30,
+    :requested_plugins => [],
+  }
+
+  requested_options = {}
+  config_file = nil
+  list_plugins = false
+
+  OptionParser.new do |opts|
+    opts.banner = "Tails the most recent CommuniGate or UNIX log files and allows plugins to take
+actions based on the log entries or on an internal timer.
+
+Usage: cgmonitor [options]
+(also see the init script in the init.d directory which can make this all much simpler)"
+
+    opts.on("-h", "--help", "Print this help message and exit.") {  $stderr.puts opts; exit }
+    opts.on("-M", "--email=ADDRESS", "When there is any output, email it to ADDRESS. Careful!") { |e| requested_options[:email_to] = e }
+    opts.on("-J", "--jabber=ADDRESSES", "When there is any output, IM it to ADDRESSES, comma-separated. Careful!") { |e| requested_options[:jabber_to] = e }
+    opts.on("--email-server=SERVER", "If using --email, use SERVER as the SMTP server.") { |s| requested_options[:smtp_host] = s }
+    opts.on("-v", "--verbose", "Print lots of output.") { requested_options[:verbose] = true }
+    opts.on("--debug", "Print lots and lots of output.") { requested_options[:debug] = true }
+    opts.on("-l", "--logs=FILEORDIR", "Use FILEORDIR as a log or log directory; can be specified multiple times. Default is #{default_options[:default_log_path]}") { |d| requested_options[:log_paths] ||= []; requested_options[:log_paths] << d }
+    opts.on("-p", "---plugin=NAME", "Load the plugin NAME; can be specified multiple times. Default is to load all plugins.") { |n| requested_options[:requested_plugins] ||= []; requested_options[:requested_plugins] << n }
+    opts.on("-L", "---list-plugins", "List all available plugin names.") { list_plugins = true  }
+    opts.on("-d", "--daemon", "Become a daemon; run in the background.") { requested_options[:daemon] = true }
+    opts.on("-D", "--no-daemon", "Don't become a daemon; run in the foreground.") { requested_options[:daemon] = false }
+    opts.on("-q", "--quit", "Stop any running monitor daemon.") { requested_options[:stop_daemon] = true }
+    opts.on("-r", "--restart", "Restart a running monitor daemon; actually starts a new daemon so be SURE to set new options as well!") { requested_options[:restart_daemon] = true }
+    opts.on("-i", "--info", "Check if we're running a monitor daemon.") { requested_options[:check_daemon] = true }
+    opts.on("-c", "--config=FILE", "Use YAML-formatted FILE as a config file for options.") { |f| config_file = f }
+  end.parse!
+
+  unless config_file.nil?
+    loaded_options = File.open(config_file) { |f| YAML.load(f) }
+    loaded_options.each_pair { |k,v| requested_options[k.to_sym] = v if ((requested_options[k.to_sym].nil?) or (requested_options[k.to_sym].respond_to? :empty? and requested_options[k.to_sym].empty?)) }
+    requested_options.key_strings_to_symbols!
+  end
+
+  m = Monitor.new(default_options.merge(requested_options))
+  m.config_file = Pathname.new(config_file) if config_file
+
+  if list_plugins
+    m.register_plugins
+    $stderr.puts Plugin::registered_plugins.join(', ')
+    exit
+  end
+
+  if m.options[:email_to]
+    require 'net/smtp' 
+    raise "The Email address is invalid." unless m.validate_address(m.options[:email_to]) 
+  end
+
+  if m.options[:jabber_to]
+    require 'xmpp4r-simple' 
+    m.options[:jabber_to] = m.options[:jabber_to].split(',')
+    raise "Jabber addresses could not be split on commas." unless m.options[:jabber_to].kind_of? Array
+    bad_addrs = m.options[:jabber_to].reject { |a| m.validate_address(a) }
+    raise "Some Jabber addresses are invalid." unless bad_addrs.empty?
+    raise "Jabber ID and Password were not provided." unless m.options[:jabber_id] and m.options[:jabber_password]
+  end
+
+  begin
+    require 'pidify'
+  rescue LoadError
+    $stderr.puts 'I tried and failed to load the pidify module, so we cannot become a daemon or control daemons.'
+    m.options[:daemon] = false
+    exit if m.options[:stop_daemon] or m.options[:check_daemon]
+  end
+
+  if m.options[:check_daemon]
+    if Pidify.running?
+      $stderr.puts "An instance of cgmonitor is running as a daemon."
+    else
+      $stderr.puts "No daemon instance of cgmonitor is running."
+    end
+    exit
+  end
+
+  if m.options[:stop_daemon]
+    $stderr.puts "Stopping any running daemons..."
+    Pidify.stop
+    exit
+  end
+
+  if m.options[:restart_daemon]
+    $stderr.puts "Stopping any running daemons..."
+    Pidify.stop
+    m.options[:daemon] = true
+  end
+
+  if m.options[:daemon]
+    $stderr.puts "Starting a daemon..."
+    Pidify.start_as_daemon(:keep_output_open => false, :stay_in_directory => true)
+  end
+
+  Syslog.open('cgmonitor')
+  info_message("cgmonitor is starting#{m.options[:daemon] ? ' as a daemon' : ''}.")
+  info_message("cgmonitor will send alert emails to #{m.options[:email_to]} using #{m.options[:smtp_host]}.") if m.options[:email_to]
+  info_message("cgmonitor will send alert IMs to #{m.options[:jabber_to].join(', ')} using #{m.options[:jabber_id]}.") if m.options[:jabber_to]
+  if m.options[:log_paths] and !m.options[:log_paths].empty?
+    info_message("cgmonitor is watching the following logs: #{m.options[:log_paths].find_all {|f| Pathname.new(f).file? }.join(', ')}") 
+    info_message("cgmonitor is watching the following directories for logs: #{m.options[:log_paths].find_all {|f| Pathname.new(f).directory? }.join(', ')}") 
+  else
+    info_message("cgmonitor is watching the following logs: #{m.options[:default_log_path].find_all {|f| Pathname.new(f).file? }.join(', ')}") 
+    info_message("cgmonitor is watching the following directories for logs: #{m.options[:default_log_path].find_all {|f| Pathname.new(f).directory? }.join(', ')}") 
+  end
+
+  m.register_plugins
+  m.activate_plugins
+
+  m.start
+
+  m.info_message('All monitors have stopped; cgmonitor is stopping.')
+end
+
+end
