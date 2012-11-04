@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module File::Tail - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>tail.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-after_reopen">#after_reopen</a>
+    
+    <li><a href="#method-i-backward">#backward</a>
+    
+    <li><a href="#method-i-forward">#forward</a>
+    
+    <li><a href="#method-i-tail">#tail</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module File::Tail</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-File%3A%3ATail+-+Tailing+files+in+Ruby"><a href="Tail.html">File::Tail</a> - Tailing files in Ruby</h1>
+
+<h2 id="label-Description">Description</h2>
+
+<p>This is a small ruby library that allows it to “tail” files in Ruby,
+including following a file, that still is growing like the unix command
+‘tail -f’ can.</p>
+
+<h2 id="label-Author">Author</h2>
+
+<p>Florian Frank <a href="mailto:flori@ping.de">flori@ping.de</a></p>
+
+<h2 id="label-License">License</h2>
+
+<p>This is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License Version 2 as published by the Free
+Software Foundation: <a
+href="http://www.gnu.org/copyleft/gpl.html">www.gnu.org/copyleft/gpl.html</a></p>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest version of <strong><a href="Tail.html">File::Tail</a></strong>
+(file-tail) can be found at</p>
+
+<p><a
+href="http://rubyforge.org/frs/?group_id=393">rubyforge.org/frs/?group_id=393</a></p>
+
+<p>Online Documentation should be located at</p>
+
+<p><a href="http://file-tail.rubyforge.org">file-tail.rubyforge.org</a></p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p><a href="Tail.html">File::Tail</a> is a module in the <a
+href="../File.html">File</a> class. A lightweight class interface for
+logfiles can be seen under <a
+href="Tail/Logfile.html">File::Tail::Logfile</a>.</p>
+
+<p>Direct extension of <a href="../File.html">File</a> objects with <a
+href="Tail.html">File::Tail</a> works like that:</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">log</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">Tail</span>)
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">interval</span> = <span class="ruby-value">10</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">backward</span>(<span class="ruby-value">10</span>)
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">tail</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>It’s also possible to mix <a href="Tail.html">File::Tail</a> in your own <a
+href="../File.html">File</a> classes (see also <a
+href="Tail/Logfile.html">File::Tail::Logfile</a>):</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyFile</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">File</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">Tail</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">log</span> = <span class="ruby-constant">MyFile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;myfile&quot;</span>)
+<span class="ruby-identifier">log</span>.<span class="ruby-identifier">interval</span> = <span class="ruby-value">10</span>
+<span class="ruby-identifier">log</span>.<span class="ruby-identifier">backward</span>(<span class="ruby-value">10</span>)
+<span class="ruby-identifier">log</span>.<span class="ruby-identifier">tail</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">print</span> <span class="ruby-identifier">line</span> }
+</pre>
+
+<p>The forward/backward method returns self, so it’s possible to chain methods
+together like that:</p>
+
+<pre class="ruby"><span class="ruby-identifier">log</span>.<span class="ruby-identifier">backward</span>(<span class="ruby-value">10</span>).<span class="ruby-identifier">tail</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span> }
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-break_if_eof" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">break_if_eof</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If this attribute is set to a true value, File::Fail’s tail method raises a
+<a href="Tail/BreakException.html">BreakException</a> if the end of the
+file is reached.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-interval" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">interval</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The start value of the sleep interval. This value goes against
+<code>max_interval</code> if the tailed file is silent for a sufficient
+time.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-max_interval" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">max_interval</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The maximum interval <a href="Tail.html">File::Tail</a> sleeps, before it
+tries to take some action like reading the next few lines or reopening the
+file.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-reopen_deleted" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">reopen_deleted</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If this attribute is set to a true value, <a
+href="Tail.html">File::Tail</a> persists on reopening a deleted file
+waiting <code>max_interval</code> seconds between the attempts. This is
+useful if logfiles are moved away while rotation occurs but are recreated
+at the same place after a while. It defaults to true.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-reopen_suspicious" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">reopen_suspicious</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If this attribute is set to a true value, <a
+href="Tail.html">File::Tail</a> attempts to reopen it’s tailed file after
+<code>suspicious_interval</code> seconds of silence.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-return_if_eof" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">return_if_eof</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If this attribute is set to a true value, File::Fail’s tail method just
+returns if the end of the file is reached.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-suspicious_interval" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">suspicious_interval</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This attribute is the invterval in seconds before <a
+href="Tail.html">File::Tail</a> gets suspicious that something has happend
+to it’s tailed file and an attempt to reopen it is made.</p>
+
+<p>If the attribute <code>reopen_suspicious</code> is set to a non true value,
+<a
+href="Tail.html#attribute-i-suspicious_interval">#suspicious_interval</a>
+is meaningless. It defaults to 60 seconds.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-after_reopen" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_reopen</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The callback is called with <em>self</em> as an argument after a reopen has
+occured. This allows a tailing script to find out, if a logfile has been
+rotated.</p>
+          
+
+          
+          <div class="method-source-code" id="after_reopen-source">
+            <pre><span class="ruby-comment"># File tail.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_reopen</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@after_reopen</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_reopen-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_reopen-method -->
+
+    
+      <div id="method-i-backward" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backward</span><span
+            class="method-args">(n = 0, bufsiz = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rewind the last <code>n</code> lines of this file, starting from the end.
+The default is to start tailing directly from the end of the file.</p>
+
+<p>The additional argument <code>bufsiz</code> is used to determine the buffer
+size that is used to step through the file backwards. It defaults to the
+block size of the  filesystem this file belongs to or 8192 bytes if this
+cannot be determined.</p>
+          
+
+          
+          <div class="method-source-code" id="backward-source">
+            <pre><span class="ruby-comment"># File tail.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backward</span>(<span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">bufsiz</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_END</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">bufsiz</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">blksize</span> <span class="ruby-operator">||</span> <span class="ruby-value">8192</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">bufsiz</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_END</span>)
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">tell</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">start</span> = <span class="ruby-identifier">tell</span>
+        <span class="ruby-identifier">seek</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">bufsiz</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_CUR</span>)
+        <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">bufsiz</span>)
+        <span class="ruby-identifier">n</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+        <span class="ruby-identifier">seek</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">bufsiz</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_CUR</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)
+      <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">size</span>)
+      <span class="ruby-identifier">n</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">tell</span>
+    <span class="ruby-keyword">retry</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">pos</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>  <span class="ruby-comment"># forward if we are too far back</span>
+    <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-identifier">pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+    <span class="ruby-identifier">n</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">seek</span>(<span class="ruby-identifier">pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_CUR</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- backward-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- backward-method -->
+
+    
+      <div id="method-i-forward" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">forward</span><span
+            class="method-args">(n = 0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Skip the first <code>n</code> lines of this file. The default is to don’t
+skip any lines at all and start at the beginning of this file.</p>
+          
+
+          
+          <div class="method-source-code" id="forward-source">
+            <pre><span class="ruby-comment"># File tail.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">forward</span>(<span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">eof?</span>
+    <span class="ruby-identifier">readline</span>
+    <span class="ruby-identifier">n</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- forward-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- forward-method -->
+
+    
+      <div id="method-i-tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tail</span><span
+            class="method-args">(n = nil) { |line| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method tails this file and yields to the given block for every new
+line that is read. If no block is given an array of those lines is returned
+instead. (In this case it’s better to use a reasonable value for
+<code>n</code> or set the <code>return_if_eof</code> or
+<code>break_if_eof</code> attribute to a true value to stop the method call
+from blocking.)</p>
+
+<p>If the argument <code>n</code> is given, only the next <code>n</code> lines
+are read and the method call returns. Otherwise this method call doesn’t
+return, but yields to block for every new line read from this file for
+ever.</p>
+          
+
+          
+          <div class="method-source-code" id="tail-source">
+            <pre><span class="ruby-comment"># File tail.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tail</span>(<span class="ruby-identifier">n</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yields: line</span>
+  <span class="ruby-ivar">@n</span> = <span class="ruby-identifier">n</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">array_result</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">block</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
+    <span class="ruby-identifier">array_result</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">preset_attributes</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@lines</span>
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">restat</span>
+      <span class="ruby-identifier">read_line</span>(&amp;<span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword">redo</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ReopenException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">until</span> <span class="ruby-identifier">eof?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">readline</span>
+        <span class="ruby-ivar">@n</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@n</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">reopen_file</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">mode</span>)
+      <span class="ruby-ivar">@after_reopen</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@after_reopen</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ReturnException</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">array_result</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tail-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tail-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

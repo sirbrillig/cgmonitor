@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::MUC::SimpleMUCClient - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/muc/helper/simplemucclient.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-ban">#ban</a>
+    
+    <li><a href="#method-i-demote">#demote</a>
+    
+    <li><a href="#method-i-invite">#invite</a>
+    
+    <li><a href="#method-i-kick">#kick</a>
+    
+    <li><a href="#method-i-on_join">#on_join</a>
+    
+    <li><a href="#method-i-on_leave">#on_leave</a>
+    
+    <li><a href="#method-i-on_message">#on_message</a>
+    
+    <li><a href="#method-i-on_private_message">#on_private_message</a>
+    
+    <li><a href="#method-i-on_room_message">#on_room_message</a>
+    
+    <li><a href="#method-i-on_self_leave">#on_self_leave</a>
+    
+    <li><a href="#method-i-on_subject">#on_subject</a>
+    
+    <li><a href="#method-i-promote">#promote</a>
+    
+    <li><a href="#method-i-say">#say</a>
+    
+    <li><a href="#method-i-subject">#subject</a>
+    
+    <li><a href="#method-i-subject-3D">#subject=</a>
+    
+    <li><a href="#method-i-unban">#unban</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Jabber.html">Jabber</a>
+  
+    <li><a href="../../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../../File.html">File</a>
+  
+    <li><a href="../../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../../REXML.html">REXML</a>
+  
+    <li><a href="../../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../../Base64.html">Base64</a>
+  
+    <li><a href="../../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../../Pathname.html">Pathname</a>
+  
+    <li><a href="../../Pidify.html">Pidify</a>
+  
+    <li><a href="../../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::MUC::SimpleMUCClient</h1>
+
+  <div id="description" class="description">
+    
+<p>This class attempts to implement a lot of complexity of the Multi-User Chat
+protocol. If you want to implement JEP0045 yourself, use <a
+href="MUCClient.html">Jabber::MUC::MUCClient</a> for some minor
+abstraction.</p>
+
+<p>Minor flexibility penalty: the on_* callbacks are no CallbackLists and may
+therefore only used once. A second invocation will overwrite the previous
+set up block.</p>
+
+<p><strong>Hint:</strong> the parameter time may be nil if the server didn't
+send it.</p>
+
+<p>Example usage:</p>
+
+<pre class="ruby"><span class="ruby-identifier">my_muc</span> = <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">MUC</span><span class="ruby-operator">::</span><span class="ruby-constant">SimpleMUCClient</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">my_client</span>)
+<span class="ruby-identifier">my_muc</span>.<span class="ruby-identifier">on_message</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">time</span>,<span class="ruby-identifier">nick</span>,<span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> (<span class="ruby-identifier">time</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>).<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%I:%M'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot; &lt;#{nick}&gt; #{text}&quot;</span>
+}
+<span class="ruby-identifier">my_muc</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">JID</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'jdev@conference.jabber.org/XMPP4R-Bot'</span>))
+</pre>
+
+<p>Please take a look at <a href="MUCClient.html">Jabber::MUC::MUCClient</a>
+for derived methods, such as <a
+href="MUCClient.html#method-i-join">Jabber::MUC::MUCClient#join</a>, <a
+href="MUCClient.html#method-i-exit">Jabber::MUC::MUCClient#exit</a>, …</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(stream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize a <a href="SimpleMUCClient.html">SimpleMUCClient</a></p>
+<dl class="rdoc-list note-list"><dt>stream
+<dd><dl class="rdoc-list label-list"><dt><a href="../Stream.html">Stream</a>
+<dd>
+<p>to operate on</p>
+</dd></dl>
+</dd><dt>jid
+<dd><dl class="rdoc-list label-list"><dt><a href="../JID.html">JID</a>
+<dd>
+<p>room@component/nick</p>
+</dd></dl>
+</dd><dt>password
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Optional password</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">stream</span>)
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-ivar">@room_message_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@message_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@private_message_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@subject_block</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-ivar">@join_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">add_join_callback</span>(<span class="ruby-value">999</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">pres</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Presence time</span>
+    <span class="ruby-identifier">time</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">pres</span>.<span class="ruby-identifier">each_element</span>(<span class="ruby-string">'x'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Delay</span><span class="ruby-operator">::</span><span class="ruby-constant">XDelay</span>)
+        <span class="ruby-identifier">time</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">stamp</span>
+      <span class="ruby-keyword">end</span>
+    }
+
+    <span class="ruby-comment"># Invoke...</span>
+    <span class="ruby-ivar">@join_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">time</span>, <span class="ruby-identifier">pres</span>.<span class="ruby-identifier">from</span>.<span class="ruby-identifier">resource</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@join_block</span>
+    <span class="ruby-keyword">false</span>
+  }
+
+  <span class="ruby-ivar">@leave_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@self_leave_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">add_leave_callback</span>(<span class="ruby-value">999</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">pres</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Presence time</span>
+    <span class="ruby-identifier">time</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">pres</span>.<span class="ruby-identifier">each_element</span>(<span class="ruby-string">'x'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Delay</span><span class="ruby-operator">::</span><span class="ruby-constant">XDelay</span>)
+        <span class="ruby-identifier">time</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">stamp</span>
+      <span class="ruby-keyword">end</span>
+    }
+
+    <span class="ruby-comment"># Invoke...</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">pres</span>.<span class="ruby-identifier">from</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">jid</span>
+      <span class="ruby-ivar">@self_leave_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">time</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@self_leave_block</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@leave_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">time</span>, <span class="ruby-identifier">pres</span>.<span class="ruby-identifier">from</span>.<span class="ruby-identifier">resource</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@leave_block</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">false</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-ban" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ban</span><span
+            class="method-args">(recipients, reason)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Administratively ban one or more user jids from the room.</p>
+
+<p>Will wait for response, possibly raising ServerError</p>
+
+<p>Sample usage:</p>
+
+<pre>my_muc.ban 'pistol@foobar.com', 'Avaunt, you cullion!'</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt>Array
+<dd>
+<p>of, or single [String]: JIDs</p>
+</dd></dl>
+</dd><dt>reason
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Ban reason</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="ban-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ban</span>(<span class="ruby-identifier">recipients</span>, <span class="ruby-identifier">reason</span>)
+  <span class="ruby-identifier">recipients</span> = [<span class="ruby-identifier">recipients</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">recipient</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">IqQueryMUCAdminItem</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span> = <span class="ruby-identifier">recipient</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">affiliation</span> = <span class="ruby-value">:outcast</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">reason</span> = <span class="ruby-identifier">reason</span>
+    <span class="ruby-identifier">item</span>
+  }
+  <span class="ruby-identifier">send_affiliations</span>(<span class="ruby-identifier">items</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ban-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ban-method -->
+
+    
+      <div id="method-i-demote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">demote</span><span
+            class="method-args">(recipients)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Demote one or more users in the room to participant.</p>
+
+<p>Will wait for response, possibly raising ServerError</p>
+
+<p>Sample usage:</p>
+
+<pre>my_muc.demote 'pistol'</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt>Array
+<dd>
+<p>of, or single [String]: Nicks</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="demote-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">demote</span>(<span class="ruby-identifier">recipients</span>)
+  <span class="ruby-identifier">recipients</span> = [<span class="ruby-identifier">recipients</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">recipient</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">IqQueryMUCAdminItem</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">nick</span> = <span class="ruby-identifier">recipient</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">role</span> = <span class="ruby-value">:participant</span>
+    <span class="ruby-identifier">item</span>
+  }
+  <span class="ruby-identifier">send_affiliations</span>(<span class="ruby-identifier">items</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- demote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- demote-method -->
+
+    
+      <div id="method-i-invite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite</span><span
+            class="method-args">(recipients)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Request the <a href="../MUC.html">MUC</a> to invite users to this room</p>
+
+<p>Sample usage:</p>
+
+<pre class="ruby"><span class="ruby-identifier">my_muc</span>.<span class="ruby-identifier">invite</span>( {<span class="ruby-string">'wiccarocks@shakespeare.lit/laptop'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'This coven needs both wiccarocks and hag66.'</span>,
+                <span class="ruby-string">'hag66@shakespeare.lit'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'This coven needs both hag66 and wiccarocks.'</span>} )
+</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt><a href="../../Hash.html">Hash</a>
+<dd>
+<p>of [JID] =&gt; [String] Reason</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="invite-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite</span>(<span class="ruby-identifier">recipients</span>)
+  <span class="ruby-identifier">msg</span> = <span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">XMUCUser</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">jid</span>,<span class="ruby-identifier">reason</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">XMUCUserInvite</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jid</span>, <span class="ruby-identifier">reason</span>))
+  }
+  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">msg</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite-method -->
+
+    
+      <div id="method-i-kick" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kick</span><span
+            class="method-args">(recipients, reason)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Administratively remove one or more users from the room.</p>
+
+<p>Will wait for response, possibly raising ServerError</p>
+
+<p>Sample usage:</p>
+
+<pre>my_muc.kick 'pistol', 'Avaunt, you cullion!'
+my_muc.kick(['Bill', 'Linus'], 'Stop flaming')</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt>Array
+<dd>
+<p>of, or single [String]: Nicks</p>
+</dd></dl>
+</dd><dt>reason
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Kick reason</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="kick-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kick</span>(<span class="ruby-identifier">recipients</span>, <span class="ruby-identifier">reason</span>)
+  <span class="ruby-identifier">recipients</span> = [<span class="ruby-identifier">recipients</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">recipient</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">IqQueryMUCAdminItem</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">nick</span> = <span class="ruby-identifier">recipient</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">role</span> = <span class="ruby-value">:none</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">reason</span> = <span class="ruby-identifier">reason</span>
+    <span class="ruby-identifier">item</span>
+  }
+  <span class="ruby-identifier">send_affiliations</span>(<span class="ruby-identifier">items</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- kick-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- kick-method -->
+
+    
+      <div id="method-i-on_join" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_join</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be called when somebody enters the room</p>
+
+<p>If there is a non-nil time passed to the block, chances are great that this
+is initial presence from a participant after you have joined the room.</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes two arguments: time, nickname</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_join-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_join</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@join_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_join-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_join-method -->
+
+    
+      <div id="method-i-on_leave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_leave</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be called when somebody leaves the room</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes two arguments: time, nickname</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_leave-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_leave</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@leave_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_leave-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_leave-method -->
+
+    
+      <div id="method-i-on_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_message</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be invoked when a message from a participant to the whole room
+arrives</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes three arguments: time, sender nickname, text</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_message-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_message</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@message_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_message-method -->
+
+    
+      <div id="method-i-on_private_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_private_message</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be invoked when a private message from a participant to you
+arrives.</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes three arguments: time, sender nickname, text</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_private_message-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_private_message</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@private_message_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_private_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_private_message-method -->
+
+    
+      <div id="method-i-on_room_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_room_message</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be invoked when a message <strong>from</strong> the room arrives</p>
+
+<p>Example:</p>
+
+<pre>Astro has joined this session</pre>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes two arguments: time, text</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_room_message-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_room_message</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@room_message_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_room_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_room_message-method -->
+
+    
+      <div id="method-i-on_self_leave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_self_leave</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be called when <strong>you</strong> leave the room</p>
+
+<p>Deactivation occurs <strong>afterwards</strong>.</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes one argument: time</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_self_leave-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_self_leave</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@self_leave_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_self_leave-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_self_leave-method -->
+
+    
+      <div id="method-i-on_subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_subject</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Block to be invoked when somebody sets a new room subject</p>
+<dl class="rdoc-list note-list"><dt>block
+<dd>
+<p>Takes three arguments: time, nickname, new subject</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="on_subject-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_subject</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@subject_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_subject-method -->
+
+    
+      <div id="method-i-promote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">promote</span><span
+            class="method-args">(recipients)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Promote one or more users in the room to moderator.</p>
+
+<p>Will wait for response, possibly raising ServerError</p>
+
+<p>Sample usage:</p>
+
+<pre>my_muc.promote 'pistol'</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt>Array
+<dd>
+<p>of, or single [String]: Nicks</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="promote-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">promote</span>(<span class="ruby-identifier">recipients</span>)
+  <span class="ruby-identifier">recipients</span> = [<span class="ruby-identifier">recipients</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">recipient</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">IqQueryMUCAdminItem</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">nick</span> = <span class="ruby-identifier">recipient</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">role</span> = <span class="ruby-value">:moderator</span>
+    <span class="ruby-identifier">item</span>
+  }
+  <span class="ruby-identifier">send_affiliations</span>(<span class="ruby-identifier">items</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- promote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- promote-method -->
+
+    
+      <div id="method-i-say" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">say</span><span
+            class="method-args">(text, to=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Send a simple text message</p>
+<dl class="rdoc-list note-list"><dt>text
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p><a href="../Message.html">Message</a> body</p>
+</dd></dl>
+</dd><dt>to
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Optional nick if directed to specific user</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="say-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">say</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">send</span>(<span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">text</span>), <span class="ruby-identifier">to</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- say-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- say-method -->
+
+    
+      <div id="method-i-subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Room subject/topic</p>
+<dl class="rdoc-list note-list"><dt>result
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The subject</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="subject-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject</span>
+  <span class="ruby-ivar">@subject</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-method -->
+
+    
+      <div id="method-i-subject-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject=</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change the room’s subject/topic</p>
+
+<p>This will not be reflected by <a
+href="SimpleMUCClient.html#method-i-subject">#subject</a> immediately, wait
+for <a href="SimpleMUCClient.html#method-i-on_subject">#on_subject</a></p>
+<dl class="rdoc-list note-list"><dt>s
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>New subject</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="subject-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject=</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-identifier">msg</span> = <span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-identifier">s</span>
+  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">msg</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-3D-method -->
+
+    
+      <div id="method-i-unban" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unban</span><span
+            class="method-args">(recipients)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unban one or more user jids for the room.</p>
+
+<p>Will wait for response, possibly raising ServerError</p>
+
+<p>Sample usage:</p>
+
+<pre>my_muc.unban 'pistol@foobar.com'</pre>
+<dl class="rdoc-list note-list"><dt>recipients
+<dd><dl class="rdoc-list label-list"><dt>Array
+<dd>
+<p>of, or single [String]: JIDs</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="unban-source">
+            <pre><span class="ruby-comment"># File xmpp4r/muc/helper/simplemucclient.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unban</span>(<span class="ruby-identifier">recipients</span>)
+  <span class="ruby-identifier">recipients</span> = [<span class="ruby-identifier">recipients</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">recipients</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">recipient</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">IqQueryMUCAdminItem</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span> = <span class="ruby-identifier">recipient</span>
+    <span class="ruby-identifier">item</span>.<span class="ruby-identifier">affiliation</span> = <span class="ruby-value">:none</span>
+    <span class="ruby-identifier">item</span>
+  }
+  <span class="ruby-identifier">send_affiliations</span>(<span class="ruby-identifier">items</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unban-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unban-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class EmailStats - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>plugins/email_stats-plugin.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_one">#add_one</a>
+    
+    <li><a href="#method-i-clean_old_data">#clean_old_data</a>
+    
+    <li><a href="#method-i-current_day">#current_day</a>
+    
+    <li><a href="#method-i-current_month">#current_month</a>
+    
+    <li><a href="#method-i-data_file">#data_file</a>
+    
+    <li><a href="#method-i-every_line">#every_line</a>
+    
+    <li><a href="#method-i-read_data">#read_data</a>
+    
+    <li><a href="#method-i-recent_file">#recent_file</a>
+    
+    <li><a href="#method-i-reset_data">#reset_data</a>
+    
+    <li><a href="#method-i-shut_down">#shut_down</a>
+    
+    <li><a href="#method-i-start_up">#start_up</a>
+    
+    <li><a href="#method-i-write_data">#write_data</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Jabber.html">Jabber</a>
+  
+    <li><a href="./Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="./Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="./Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="./Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="./Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="./Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="./Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="./Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="./Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="./Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="./Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="./Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="./Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="./Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="./Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="./Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="./Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="./Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="./Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="./Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="./Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="./Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="./Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="./Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="./Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="./Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="./Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="./Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="./Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="./Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="./Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="./Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="./Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="./Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="./Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="./Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="./Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="./Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="./Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="./Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="./Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="./Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="./Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="./Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="./Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="./Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="./Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="./Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="./Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="./Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="./Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="./Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="./Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="./Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="./Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="./Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="./Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="./Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="./Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="./Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="./Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="./Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="./Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="./Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="./Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="./Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="./Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="./Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="./Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="./Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="./Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="./Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="./Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="./Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="./Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="./Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="./Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="./Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="./Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="./Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="./Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="./Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="./Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="./Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="./Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="./Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="./Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="./Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="./Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="./Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="./Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="./Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="./Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="./Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="./Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="./Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="./Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="./Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="./Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="./Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="./Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="./Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="./Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="./Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="./Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="./Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="./Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="./Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="./Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="./Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="./Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="./Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="./Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="./Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="./Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="./Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="./Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="./Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="./Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="./Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="./Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="./Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="./Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="./Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="./Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="./Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="./Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="./Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="./Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="./Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="./Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="./Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./File/Tail.html">File::Tail</a>
+  
+    <li><a href="./File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="./File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="./File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="./File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="./File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="./File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="./CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="./CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="./CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="./REXML.html">REXML</a>
+  
+    <li><a href="./REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="./REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="./XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="./XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="./ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="./AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="./Base64.html">Base64</a>
+  
+    <li><a href="./BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="./CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="./CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="./CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="./CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="./CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="./CheckSize.html">CheckSize</a>
+  
+    <li><a href="./CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="./EmailStats.html">EmailStats</a>
+  
+    <li><a href="./FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="./FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="./Pathname.html">Pathname</a>
+  
+    <li><a href="./Pidify.html">Pidify</a>
+  
+    <li><a href="./SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="./SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="./SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="./TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="./Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class EmailStats</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_one" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_one</span><span
+            class="method-args">(label)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_one-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_one</span>(<span class="ruby-identifier">label</span>)
+  <span class="ruby-ivar">@data</span>[<span class="ruby-ivar">@today</span>][<span class="ruby-identifier">label</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@data</span>[<span class="ruby-ivar">@today</span>][<span class="ruby-identifier">label</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_one-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_one-method -->
+
+    
+      <div id="method-i-clean_old_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clean_old_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Purge the @data hash of data older than 2 months + the “recent” time
+period.</p>
+          
+
+          
+          <div class="method-source-code" id="clean_old_data-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clean_old_data</span>
+  <span class="ruby-identifier">oldest_day</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> (<span class="ruby-value">2</span>.<span class="ruby-identifier">months</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@days_of_data_to_keep</span>.<span class="ruby-identifier">days</span>)
+  <span class="ruby-identifier">new_data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-value">:last_written</span>
+      <span class="ruby-identifier">new_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">k</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">oldest_day</span>
+      <span class="ruby-identifier">new_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">new_data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clean_old_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clean_old_data-method -->
+
+    
+      <div id="method-i-current_day" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_day</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current_day-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_day</span>
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%Y-%m-%d'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_day-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_day-method -->
+
+    
+      <div id="method-i-current_month" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_month</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current_month-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_month</span>
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%Y-%m'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_month-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_month-method -->
+
+    
+      <div id="method-i-data_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data_file</span><span
+            class="method-args">(month=current_month)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="data_file-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">data_file</span>(<span class="ruby-identifier">month</span>=<span class="ruby-identifier">current_month</span>)
+  <span class="ruby-ivar">@data_file_path</span><span class="ruby-operator">+</span><span class="ruby-node">&quot;#{month}.dat&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- data_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- data_file-method -->
+
+    
+      <div id="method-i-every_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">every_line</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="every_line-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">every_line</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stop</span>
+
+  <span class="ruby-comment"># When we finish a day, write the data out, and set up the new blank data</span>
+  <span class="ruby-comment"># for today.</span>
+  <span class="ruby-ivar">@today</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">current_day</span>
+  <span class="ruby-ivar">@this_month</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">current_month</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_day</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@today</span>
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;It appears to be a new day (#{current_day.inspect} != #{@today.inspect}).  Saving data and resetting for today.&quot;</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_month</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@this_month</span>
+      <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;It appears to be a new month (#{current_month.inspect} != #{@this_month.inspect}).  Resetting monthly data.&quot;</span>)
+      <span class="ruby-identifier">write_data</span>(<span class="ruby-ivar">@this_month</span>)
+      <span class="ruby-identifier">clean_old_data</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">write_data</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">reset_data</span>
+    <span class="ruby-ivar">@today</span> = <span class="ruby-identifier">current_day</span>
+    <span class="ruby-ivar">@this_month</span> = <span class="ruby-identifier">current_month</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@data</span>[<span class="ruby-ivar">@today</span>].<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;The data hash for today (#{@today.inspect}) is not a hash for some reason. This should not happen. The data for today is instead: #{@data[@today].inspect}&quot;</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+
+  <span class="ruby-comment"># Seeing the following means that we've received a new inbound SMTP</span>
+  <span class="ruby-comment"># attempted connection.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTPI-.+ got connection on/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_smtp_attempt</span>)
+
+  <span class="ruby-comment"># Seeing the following means that we're starting a new inbound SMTP</span>
+  <span class="ruby-comment"># session.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTPI-.+ rsp: 220 fe1.bc.edu ESMTP CommuniGate Pro/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_smtp</span>)
+
+  <span class="ruby-comment"># This means a single inbound message (with any number of recipients) is</span>
+  <span class="ruby-comment"># being accepted for an attempt to be delivered.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTPI-.+ rsp: 250 \d+ message accepted for delivery/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_enqueued_messages</span>)
+
+  <span class="ruby-comment"># This means a copy of a single inbound message (for one recipient) is</span>
+  <span class="ruby-comment"># being accepted for an attempt to be delivered.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTPI-.+ rsp: 250 (.+) (will leave the Internet|will relay mail for an authenticated user)/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_enqueued_recipients</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-node">$1</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r@(mail\.)?bc\.edu/</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_enqueued_for_bc</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_enqueued_for_relay</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># This means that a user is attempting to forward a copy of a message to</span>
+  <span class="ruby-comment"># another address with a rule (does not include those who forward by</span>
+  <span class="ruby-comment"># mailroutingaddress such as alumni, applicants, and forwarding</span>
+  <span class="ruby-comment"># mailgroups).</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rLOCALRULES\(.+ rule '#Redirect'\(Mirror\) -&gt;/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:forwarded</span>)
+
+  <span class="ruby-comment"># This means that a copy of a message has been successfully delivered to a</span>
+  <span class="ruby-comment"># mailbox.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rDEQUEUER .+ LOCAL\(.+ delivered: Delivered to the user mailbox/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:inbound_delivered</span>)
+
+  <span class="ruby-comment"># This means that an outbound message (with any number of recipients) has</span>
+  <span class="ruby-comment"># been accepted by another server.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rDEQUEUER .+ SMTP\(.+ relayed: relayed via /</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:outbound_relayed_messages</span>)
+
+  <span class="ruby-comment"># This is a &quot;throttling&quot; rejection by hotmail/msn.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTP-\d+\((hotmail|msn)\.com\) rsp: 550 Your e-mail was rejected for policy reasons/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:hotmail_rejection</span>)
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:hotmail_total</span>)
+
+  <span class="ruby-comment"># This is a successful delivery to hotmail/msn.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTP-\d+\((hotmail|msn)\.com\) rsp: 250\s+\&lt;[^&gt;]+\&gt; Queued mail for delivery/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:hotmail_accepted</span>)
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:hotmail_total</span>)
+
+  <span class="ruby-comment"># This means a message has been scored by SpamCatcher.  We'll record it as</span>
+  <span class="ruby-comment"># &quot;spam&quot; if its score is 85 or greater (the default 'bostoncollegespam'</span>
+  <span class="ruby-comment"># filter rule).</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rADDHEADER &quot;X-SpamCatcher-Score:\s+(\d+)/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_spamcatcher_scored</span>)
+    <span class="ruby-identifier">score</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">score</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">84</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:spam_messages</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">score</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">77</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:probably_spam_messages</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># This means that we've tried to send a message to another host and the</span>
+  <span class="ruby-comment"># message was rejected with a temporary error that used the word</span>
+  <span class="ruby-comment"># 'greylist', implying that we're being greylisted by that MTA.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTP-.+ rsp: 4\d\d.+greylist/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:greylisted</span>)
+
+  <span class="ruby-comment"># This message means an automatic CommuniGate message is being generated</span>
+  <span class="ruby-comment"># (probably a delay or failure warning).</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rDEQUEUER-.+ generating report message/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:report_message_generated</span>)
+
+  <span class="ruby-comment"># This header will appear when an enqueued message has the header &quot;Mail</span>
+  <span class="ruby-comment"># Delayed&quot; which is an automatically generated message.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rheader: Subject: (WARNING. Mail Delayed|Message Delayed)/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:mail_delayed_warning</span>)
+
+  <span class="ruby-comment"># This header will appear when a mailbox is corrupted (when the actual</span>
+  <span class="ruby-comment"># info doesn't match the account.info file) and corrections need to be</span>
+  <span class="ruby-comment"># made.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rMAILBOX\(.+ Corrected/</span>
+    <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:corrected_mailbox</span>)
+
+  <span class="ruby-comment"># This is a 500 error response, meaning that whatever the last command was,</span>
+  <span class="ruby-comment"># it caused a permanent error.  Generally, this means a recipient or a</span>
+  <span class="ruby-comment"># message body was rejected, although it can happen many times within one</span>
+  <span class="ruby-comment"># SMTP session.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rSMTPI-.+ rsp: (5\d\d) /</span>
+    <span class="ruby-identifier">code</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">591</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected</span>)
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected_spamhaus</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">592</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">573</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">550</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected</span>)
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected_bad_address</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">579</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected</span>)
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected_banned_text</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">554</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected</span>)
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected_no_address</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected</span>)
+      <span class="ruby-identifier">add_one</span>(<span class="ruby-value">:messages_rejected_quota_full</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Write the data out approximately once per half hour.</span>
+  <span class="ruby-ivar">@first_scan</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@first_scan</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>.<span class="ruby-identifier">minutes</span>
+    <span class="ruby-identifier">write_data</span> 
+    <span class="ruby-ivar">@first_scan</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- every_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- every_line-method -->
+
+    
+      <div id="method-i-read_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If a data file exists for the current month, read it and import the YAML
+data.</p>
+          
+
+          
+          <div class="method-source-code" id="read_data-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read_data</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">data_file</span>.<span class="ruby-identifier">exist?</span>
+    <span class="ruby-identifier">data_file</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'r'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">f</span>)) }
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Read email stats from file #{data_file.to_s}&quot;</span>)
+
+    <span class="ruby-comment"># Note times during which data was not being read.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>[<span class="ruby-value">:last_written</span>]
+      <span class="ruby-identifier">seconds_since_write</span> = (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@data</span>[<span class="ruby-value">:last_written</span>])
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">seconds_since_write</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-value">60</span>*<span class="ruby-value">60</span>*<span class="ruby-value">24</span>)
+        <span class="ruby-identifier">value</span> = (<span class="ruby-identifier">seconds_since_write</span><span class="ruby-operator">/</span><span class="ruby-value">60</span><span class="ruby-operator">/</span><span class="ruby-value">60</span><span class="ruby-operator">/</span><span class="ruby-value">24</span>).<span class="ruby-identifier">round</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-string">'day'</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">seconds_since_write</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-value">60</span>*<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">value</span> = (<span class="ruby-identifier">seconds_since_write</span><span class="ruby-operator">/</span><span class="ruby-value">60</span><span class="ruby-operator">/</span><span class="ruby-value">60</span>).<span class="ruby-identifier">round</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-string">'hour'</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">seconds_since_write</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">value</span> = (<span class="ruby-identifier">seconds_since_write</span><span class="ruby-operator">/</span><span class="ruby-value">60</span>).<span class="ruby-identifier">round</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-string">'minute'</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">seconds_since_write</span>.<span class="ruby-identifier">round</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-string">'second'</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">time_difference</span> = <span class="ruby-node">&quot;#{value} #{name}#{(value == 1 ? '':'s')}&quot;</span>
+      <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Prior to this read, the last write to the file was: #{@data[:last_written].to_s} (#{time_difference} ago)&quot;</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">current_day</span>]
+        <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">current_day</span>][<span class="ruby-value">:missed_times</span>] <span class="ruby-operator">||=</span> []
+        <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">current_day</span>][<span class="ruby-value">:missed_times</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@data[:last_written].to_s} - #{Time.now.to_s}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">recent_file</span>.<span class="ruby-identifier">exist?</span>
+    <span class="ruby-identifier">recent_file</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'r'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">f</span>)) }
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Read recent email stats from file #{recent_file.to_s}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- read_data-method -->
+
+    
+      <div id="method-i-recent_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recent_file</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recent_file-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recent_file</span>
+  <span class="ruby-ivar">@data_file_path</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;recent.yaml&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recent_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recent_file-method -->
+
+    
+      <div id="method-i-reset_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Store data in a hash keyed by day for the entire month.</p>
+          
+
+          
+          <div class="method-source-code" id="reset_data-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_data</span>
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">current_day</span>] = { 
+    <span class="ruby-value">:missed_times</span> =<span class="ruby-operator">&gt;</span> [],
+    <span class="ruby-value">:inbound_smtp_attempt</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_smtp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_enqueued_messages</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_enqueued_recipients</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_enqueued_for_bc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_enqueued_for_relay</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:forwarded</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:inbound_delivered</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:outbound_relayed_messages</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:hotmail_rejection</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:hotmail_accepted</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:hotmail_total</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:spam_messages</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:probably_spam_messages</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_spamcatcher_scored</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected_spamhaus</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected_bad_address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected_banned_text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected_no_address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:messages_rejected_quota_full</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:greylisted</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:report_message_generated</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:mail_delayed_warning</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+    <span class="ruby-value">:corrected_mailbox</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+  }
+  <span class="ruby-comment"># Add a timestamp when writing and add note if we've missed any time.</span>
+  <span class="ruby-ivar">@data</span>[<span class="ruby-value">:last_written</span>] = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Data reset for #{current_day.inspect}.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset_data-method -->
+
+    
+      <div id="method-i-shut_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shut_down</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="shut_down-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shut_down</span>
+  <span class="ruby-identifier">write_data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shut_down-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shut_down-method -->
+
+    
+      <div id="method-i-start_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_up</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="start_up-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_up</span>
+  <span class="ruby-ivar">@data_file_path</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'/var/log/email_stats'</span>)
+  <span class="ruby-ivar">@stop</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@days_of_data_to_keep</span> = (<span class="ruby-value">3</span> * <span class="ruby-value">31</span>)
+
+  <span class="ruby-identifier">reset_data</span>
+  <span class="ruby-identifier">read_data</span>
+
+  <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;The EmailStats plugin will write its output in #{@data_file_path}&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@data_file_path</span>.<span class="ruby-identifier">exist?</span>
+    <span class="ruby-ivar">@data_file_path</span>.<span class="ruby-identifier">mkpath</span>()
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@data_file_path</span>.<span class="ruby-identifier">exist?</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;The data directory #{@data_file_path} could not be created.&quot;</span>)
+    <span class="ruby-ivar">@stop</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@data_file_path</span>.<span class="ruby-identifier">directory?</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;The data directory #{@data_file_path} exists but is not a directory.&quot;</span>)
+    <span class="ruby-ivar">@stop</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@data_file_path</span>.<span class="ruby-identifier">writable?</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;The data directory #{@data_file_path} exists but is not writable.&quot;</span>)
+    <span class="ruby-ivar">@stop</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start_up-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start_up-method -->
+
+    
+      <div id="method-i-write_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_data</span><span
+            class="method-args">(month=current_month)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Dump the data into a YAML-encoded file for the month.</p>
+          
+
+          
+          <div class="method-source-code" id="write_data-source">
+            <pre><span class="ruby-comment"># File plugins/email_stats-plugin.rb, line 75</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_data</span>(<span class="ruby-identifier">month</span>=<span class="ruby-identifier">current_month</span>)
+
+    <span class="ruby-ivar">@data</span>[<span class="ruby-value">:last_written</span>] = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+
+    <span class="ruby-comment"># Write data for the current month to the monthly file.</span>
+    <span class="ruby-comment"># Write to temp file first, then move it to the real file and delete the</span>
+    <span class="ruby-comment"># temp.</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">data_file</span>(<span class="ruby-identifier">month</span>)
+    <span class="ruby-identifier">temp_file</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">'.tmp'</span>)
+    <span class="ruby-identifier">monthly_data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-value">:last_written</span>
+        <span class="ruby-identifier">monthly_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">k</span>).<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%Y-%m'</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">month</span>
+        <span class="ruby-identifier">monthly_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">temp_file</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">dump</span>(<span class="ruby-identifier">monthly_data</span>, <span class="ruby-identifier">f</span>) }
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">copy</span>(<span class="ruby-identifier">temp_file</span>, <span class="ruby-identifier">file</span>)
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Wrote monthly email stats to file #{file.to_s}&quot;</span>)
+<span class="ruby-comment">#     temp_file.unlink</span>
+
+    <span class="ruby-comment"># Also write to the 'recent' file, but only the last @days_of_data_to_keep days.</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">recent_file</span>()
+    <span class="ruby-identifier">temp_file</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">'.tmp'</span>)
+    <span class="ruby-identifier">oldest_day</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@days_of_data_to_keep</span>.<span class="ruby-identifier">days</span>
+    <span class="ruby-identifier">recent_data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-value">:last_written</span>
+        <span class="ruby-identifier">recent_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">k</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">oldest_day</span>
+        <span class="ruby-identifier">recent_data</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">temp_file</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">dump</span>(<span class="ruby-identifier">recent_data</span>, <span class="ruby-identifier">f</span>) }
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">copy</span>(<span class="ruby-identifier">temp_file</span>, <span class="ruby-identifier">file</span>)
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Wrote recent email stats to file #{file.to_s}&quot;</span>)
+<span class="ruby-comment">#     temp_file.unlink</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- write_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_data-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

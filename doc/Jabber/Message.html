@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::Message - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/message.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">XMPPStanza
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="XParent.html">Jabber::XParent</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-body">#body</a>
+    
+    <li><a href="#method-i-body-3D">#body=</a>
+    
+    <li><a href="#method-i-set_body">#set_body</a>
+    
+    <li><a href="#method-i-set_subject">#set_subject</a>
+    
+    <li><a href="#method-i-set_thread">#set_thread</a>
+    
+    <li><a href="#method-i-set_type">#set_type</a>
+    
+    <li><a href="#method-i-subject">#subject</a>
+    
+    <li><a href="#method-i-subject-3D">#subject=</a>
+    
+    <li><a href="#method-i-thread">#thread</a>
+    
+    <li><a href="#method-i-thread-3D">#thread=</a>
+    
+    <li><a href="#method-i-type">#type</a>
+    
+    <li><a href="#method-i-type-3D">#type=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::Message</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="Message.html">Message</a> class manages the &lt;message/&gt;
+stanzas, which is used for all messaging communication.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(to = nil, body = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new message</p>
+<dl class="rdoc-list note-list"><dt>&gt;to
+<dd>
+<p>a <a href="JID.html">JID</a> or a String object to send the message to.</p>
+</dd><dt>&gt;body
+<dd>
+<p>the message’s body</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">to</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">body</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">set_to</span>(<span class="ruby-identifier">to</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">body</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">add_element</span>(<span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;body&quot;</span>).<span class="ruby-identifier">add_text</span>(<span class="ruby-identifier">body</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the message’s body, or nil. This is the message’s plain-text
+content.</p>
+          
+
+          
+          <div class="method-source-code" id="body-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">first_element_text</span>(<span class="ruby-string">'body'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-method -->
+
+    
+      <div id="method-i-body-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body=</span><span
+            class="method-args">(b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the message’s body</p>
+<dl class="rdoc-list note-list"><dt>b
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>body to set</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="body-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body=</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">replace_element_text</span>(<span class="ruby-string">'body'</span>, <span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-3D-method -->
+
+    
+      <div id="method-i-set_body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_body</span><span
+            class="method-args">(b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the message’s body</p>
+<dl class="rdoc-list note-list"><dt>b
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>body to set</p>
+</dd></dl>
+</dd><dt>return
+<dd><dl class="rdoc-list label-list"><dt><a href="../REXML/Element.html">REXML::Element</a>
+<dd>
+<p>self for chaining</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_body-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_body</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">b</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_body-method -->
+
+    
+      <div id="method-i-set_subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_subject</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets the message’s subject</p>
+<dl class="rdoc-list note-list"><dt>s
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>subject to set</p>
+</dd></dl>
+</dd><dt>return
+<dd><dl class="rdoc-list label-list"><dt><a href="../REXML/Element.html">REXML::Element</a>
+<dd>
+<p>self for chaining</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_subject-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_subject</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_subject-method -->
+
+    
+      <div id="method-i-set_thread" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_thread</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>gets the message’s thread (chaining-friendly) Please note that this are not
+[Thread] but a [String]-Identifier to track conversations</p>
+<dl class="rdoc-list note-list"><dt>s
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>thread to set</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_thread-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_thread</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_thread-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_thread-method -->
+
+    
+      <div id="method-i-set_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_type</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the type of the <a href="Message.html">Message</a> stanza
+(chaining-friendly)</p>
+<dl class="rdoc-list note-list"><dt>v
+<dd><dl class="rdoc-list label-list"><dt>Symbol
+<dd>
+<p>or nil</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_type-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_type</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">type</span> = <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_type-method -->
+
+    
+      <div id="method-i-subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the message’s subject, or nil</p>
+          
+
+          
+          <div class="method-source-code" id="subject-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject</span>
+  <span class="ruby-identifier">first_element_text</span>(<span class="ruby-string">'subject'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-method -->
+
+    
+      <div id="method-i-subject-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject=</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets the message’s subject</p>
+<dl class="rdoc-list note-list"><dt>s
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>subject to set</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="subject-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject=</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-identifier">replace_element_text</span>(<span class="ruby-string">'subject'</span>, <span class="ruby-identifier">s</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-3D-method -->
+
+    
+      <div id="method-i-thread" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">thread</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the message’s thread, or nil</p>
+          
+
+          
+          <div class="method-source-code" id="thread-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">thread</span>
+  <span class="ruby-identifier">first_element_text</span>(<span class="ruby-string">'thread'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- thread-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- thread-method -->
+
+    
+      <div id="method-i-thread-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">thread=</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets the message’s thread</p>
+<dl class="rdoc-list note-list"><dt>s
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>thread to set</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="thread-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">thread=</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-identifier">delete_elements</span>(<span class="ruby-string">'thread'</span>)
+  <span class="ruby-identifier">replace_element_text</span>(<span class="ruby-string">'thread'</span>, <span class="ruby-identifier">s</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- thread-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- thread-3D-method -->
+
+    
+      <div id="method-i-type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the type of the <a href="Message.html">Message</a> stanza</p>
+
+<p>The following Symbols are allowed:</p>
+<ul><li>
+<p>:chat</p>
+</li><li>
+<p>:error</p>
+</li><li>
+<p>:groupchat</p>
+</li><li>
+<p>:headline</p>
+</li><li>
+<p>:normal</p>
+</li></ul>
+<dl class="rdoc-list note-list"><dt>result
+<dd><dl class="rdoc-list label-list"><dt>Symbol
+<dd>
+<p>or nil</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="type-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'chat'</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:chat</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'error'</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:error</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'groupchat'</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:groupchat</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'headline'</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:headline</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'normal'</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:normal</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- type-method -->
+
+    
+      <div id="method-i-type-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">type=</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the type of the <a href="Message.html">Message</a> stanza (see <a
+href="Message.html#method-i-type">#type</a> for details)</p>
+<dl class="rdoc-list note-list"><dt>v
+<dd><dl class="rdoc-list label-list"><dt>Symbol
+<dd>
+<p>or nil</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="type-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/message.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type=</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:chat</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">super</span>(<span class="ruby-string">'chat'</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:error</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">super</span>(<span class="ruby-string">'error'</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:groupchat</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">super</span>(<span class="ruby-string">'groupchat'</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:headline</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">super</span>(<span class="ruby-string">'headline'</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:normal</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">super</span>(<span class="ruby-string">'normal'</span>)
+    <span class="ruby-keyword">else</span> <span class="ruby-keyword">super</span>(<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- type-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- type-3D-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::JID - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/jid.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-escape">::escape</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-bare">#bare</a>
+    
+    <li><a href="#method-i-bare-21">#bare!</a>
+    
+    <li><a href="#method-i-bared-3F">#bared?</a>
+    
+    <li><a href="#method-i-domain">#domain</a>
+    
+    <li><a href="#method-i-domain-3D">#domain=</a>
+    
+    <li><a href="#method-i-empty-3F">#empty?</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-hash">#hash</a>
+    
+    <li><a href="#method-i-node">#node</a>
+    
+    <li><a href="#method-i-node-3D">#node=</a>
+    
+    <li><a href="#method-i-resource">#resource</a>
+    
+    <li><a href="#method-i-resource-3D">#resource=</a>
+    
+    <li><a href="#method-i-strip">#strip</a>
+    
+    <li><a href="#method-i-strip-21">#strip!</a>
+    
+    <li><a href="#method-i-stripped-3F">#stripped?</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::JID</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="JID.html">JID</a> class represents a <a
+href="../Jabber.html">Jabber</a> Identifier as described by RFC3920 section
+3.1.</p>
+
+<p>Note that you can use JIDs also for Sorting, <a
+href="../Hash.html">Hash</a> keys, …</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="PATTERN">PATTERN
+        
+        <dd class="description">
+        
+      
+        <dt id="USE_STRINGPREP">USE_STRINGPREP
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-escape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">escape</span><span
+            class="method-args">(jid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Escape <a href="JID.html">JID</a></p>
+          
+
+          
+          <div class="method-source-code" id="escape-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">JID</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape</span>(<span class="ruby-identifier">jid</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">jid</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'@'</span>, <span class="ruby-string">'%'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- escape-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- escape-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(node = "", domain = nil, resource = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="JID.html">JID</a>. If called as new(‘a@b/c’), parse
+the string and split (node, domain, resource)</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">node</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">domain</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">resource</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-identifier">resource</span>
+  <span class="ruby-ivar">@domain</span> = <span class="ruby-identifier">domain</span>
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@domain</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@node</span>
+    <span class="ruby-ivar">@node</span>, <span class="ruby-ivar">@domain</span>, <span class="ruby-ivar">@resource</span> = <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">PATTERN</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">USE_STRINGPREP</span>
+    <span class="ruby-ivar">@node</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">nodeprep</span>(<span class="ruby-ivar">@node</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@node</span>
+    <span class="ruby-ivar">@domain</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">nameprep</span>(<span class="ruby-ivar">@domain</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@domain</span>
+    <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">resourceprep</span>(<span class="ruby-ivar">@resource</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@resource</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">downcase!</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@node</span>
+    <span class="ruby-ivar">@domain</span>.<span class="ruby-identifier">downcase!</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@domain</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'Node too long'</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@node</span> <span class="ruby-operator">||</span> <span class="ruby-string">''</span>).<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1023</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'Domain too long'</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@domain</span> <span class="ruby-operator">||</span> <span class="ruby-string">''</span>).<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1023</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'Resource too long'</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@resource</span> <span class="ruby-operator">||</span> <span class="ruby-string">''</span>).<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1023</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compare two JIDs, helpful for sorting etc.</p>
+
+<p>String representations are compared, see <a
+href="JID.html#method-i-to_s">#to_s</a></p>
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ccompare to another <a href="JID.html">JID</a></p>
+
+<p>String representations are compared, see <a
+href="JID.html#method-i-to_s">#to_s</a></p>
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-bare" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">bare</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="JID.html#method-i-strip">strip</a>
+        </div>
+        
+      </div><!-- bare-method -->
+
+    
+      <div id="method-i-bare-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">bare!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="JID.html#method-i-strip-21">strip!</a>
+        </div>
+        
+      </div><!-- bare-21-method -->
+
+    
+      <div id="method-i-bared-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">bared?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="JID.html#method-i-stripped-3F">stripped?</a>
+        </div>
+        
+      </div><!-- bared-3F-method -->
+
+    
+      <div id="method-i-domain" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">domain</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the JID’s domain</p>
+          
+
+          
+          <div class="method-source-code" id="domain-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">domain</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@domain</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@domain</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- domain-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- domain-method -->
+
+    
+      <div id="method-i-domain-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">domain=</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the JID’s domain</p>
+          
+
+          
+          <div class="method-source-code" id="domain-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">domain=</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-ivar">@domain</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">USE_STRINGPREP</span>
+    <span class="ruby-ivar">@domain</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">nodeprep</span>(<span class="ruby-ivar">@domain</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- domain-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- domain-3D-method -->
+
+    
+      <div id="method-i-empty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Test if jid is empty</p>
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- empty-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- empty-3F-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ccompare to another <a href="JID.html">JID</a></p>
+
+<p>String representations are compared, see <a
+href="JID.html#method-i-to_s">#to_s</a></p>
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eql-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash value of the String representation (see <a
+href="JID.html#method-i-to_s">#to_s</a>)</p>
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash-method -->
+
+    
+      <div id="method-i-node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the JID’s node</p>
+          
+
+          
+          <div class="method-source-code" id="node-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node</span>
+  <span class="ruby-ivar">@node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node-method -->
+
+    
+      <div id="method-i-node-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node=</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the JID’s node</p>
+          
+
+          
+          <div class="method-source-code" id="node-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node=</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">USE_STRINGPREP</span>
+    <span class="ruby-ivar">@node</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">nodeprep</span>(<span class="ruby-ivar">@node</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node-3D-method -->
+
+    
+      <div id="method-i-resource" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resource</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the JID’s resource</p>
+          
+
+          
+          <div class="method-source-code" id="resource-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resource</span>
+  <span class="ruby-ivar">@resource</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resource-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resource-method -->
+
+    
+      <div id="method-i-resource-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resource=</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the JID’s resource</p>
+          
+
+          
+          <div class="method-source-code" id="resource-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resource=</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">USE_STRINGPREP</span>
+    <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">IDN</span><span class="ruby-operator">::</span><span class="ruby-constant">Stringprep</span>.<span class="ruby-identifier">nodeprep</span>(<span class="ruby-ivar">@resource</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resource-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resource-3D-method -->
+
+    
+      <div id="method-i-strip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strip</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a new <a href="JID.html">JID</a> with resource removed.</p>
+<dl class="rdoc-list note-list"><dt>return
+<dd><dl class="rdoc-list label-list"><dt><a href="JID.html">JID</a>
+<dd></dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="strip-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strip</span>
+  <span class="ruby-constant">JID</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@node</span>, <span class="ruby-ivar">@domain</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- strip-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="JID.html#method-i-bare">bare</a>
+        </div>
+        
+
+        
+      </div><!-- strip-method -->
+
+    
+      <div id="method-i-strip-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strip!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes the resource (sets it to nil)</p>
+<dl class="rdoc-list note-list"><dt>return
+<dd><dl class="rdoc-list label-list"><dt><a href="JID.html">JID</a>
+<dd>
+<p>self</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="strip-21-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strip!</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- strip-21-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="JID.html#method-i-bare-21">bare!</a>
+        </div>
+        
+
+        
+      </div><!-- strip-21-method -->
+
+    
+      <div id="method-i-stripped-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stripped?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Test id jid is strepped</p>
+          
+
+          
+          <div class="method-source-code" id="stripped-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stripped?</span>
+  <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stripped-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="JID.html#method-i-bared-3F">bared?</a>
+        </div>
+        
+
+        
+      </div><!-- stripped-3F-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string representation of the <a href="JID.html">JID</a></p>
+<ul><li>
+<p>“”</p>
+</li><li>
+<p>“domain”</p>
+</li><li>
+<p>“node@domain”</p>
+</li><li>
+<p>“domain/resource”</p>
+</li><li>
+<p>“node@domain/resource”</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File xmpp4r/jid.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-ivar">@domain</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;#{@node}@#{s}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@node</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;/#{@resource}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@resource</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

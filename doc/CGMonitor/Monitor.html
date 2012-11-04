@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CGMonitor::Monitor - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>cgmonitor
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-activate_plugins">#activate_plugins</a>
+    
+    <li><a href="#method-i-debug-3F">#debug?</a>
+    
+    <li><a href="#method-i-debug_message">#debug_message</a>
+    
+    <li><a href="#method-i-error_message">#error_message</a>
+    
+    <li><a href="#method-i-info_message">#info_message</a>
+    
+    <li><a href="#method-i-load_config">#load_config</a>
+    
+    <li><a href="#method-i-options_for">#options_for</a>
+    
+    <li><a href="#method-i-register_plugins">#register_plugins</a>
+    
+    <li><a href="#method-i-send_email">#send_email</a>
+    
+    <li><a href="#method-i-send_im">#send_im</a>
+    
+    <li><a href="#method-i-start">#start</a>
+    
+    <li><a href="#method-i-validate_address">#validate_address</a>
+    
+    <li><a href="#method-i-warning_message">#warning_message</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CGMonitor::Monitor</h1>
+
+  <div id="description" class="description">
+    
+<p>A continuous log tailer which registers plugins, activates plugins, and
+calls Plugin#every_line for every activated plugin for every log line read.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-config_file" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">config_file</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@tail_waiting</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@active_plugins</span> = []
+  <span class="ruby-ivar">@data_to_email</span> = []
+  <span class="ruby-identifier">debug_message</span>(<span class="ruby-node">&quot;Monitor created with options: #{options.inspect}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-activate_plugins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">activate_plugins</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calls activate_plugin on all classes in <a
+href="Plugin.html#attribute-c-registered_plugins">CGMonitor::Plugin.registered_plugins</a>
+or requested_plugins, if specific classes were requested on the
+command-line.</p>
+          
+
+          
+          <div class="method-source-code" id="activate_plugins-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 589</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">activate_plugins</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:requested_plugins</span>].<span class="ruby-identifier">empty?</span>
+    <span class="ruby-constant">Plugin</span><span class="ruby-operator">::</span><span class="ruby-identifier">registered_plugins</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">activate_plugin</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:requested_plugins</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">activate_plugin</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- activate_plugins-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- activate_plugins-method -->
+
+    
+      <div id="method-i-debug-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">debug?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="debug-3F-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 577</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:debug</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- debug-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug-3F-method -->
+
+    
+      <div id="method-i-debug_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">debug_message</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="debug_message-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 568</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug_message</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">debug?</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Syslog</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- debug_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug_message-method -->
+
+    
+      <div id="method-i-error_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">error_message</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="error_message-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 542</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">error_message</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Syslog</span>.<span class="ruby-identifier">crit</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">send_email</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">send_im</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- error_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- error_message-method -->
+
+    
+      <div id="method-i-info_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">info_message</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="info_message-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 560</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">info_message</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Syslog</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:verbose</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- info_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- info_message-method -->
+
+    
+      <div id="method-i-load_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_config</span><span
+            class="method-args">(config_file=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Load the configuration file and overwrite the options with its data.</p>
+          
+
+          
+          <div class="method-source-code" id="load_config-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 713</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_config</span>(<span class="ruby-identifier">config_file</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">config_file</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@config_file</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-string">&quot;Reading config file.&quot;</span>)
+    <span class="ruby-identifier">loaded_options</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">config_file</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">f</span>) }
+    <span class="ruby-identifier">loaded_options</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
+    <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">key_strings_to_symbols!</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;An exception ocurred while reading config file '#{config_file}': #{e}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_config-method -->
+
+    
+      <div id="method-i-options_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options_for</span><span
+            class="method-args">(plugin)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Call and pass a plugin to return any config file options for that plugin.</p>
+          
+
+          
+          <div class="method-source-code" id="options_for-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 726</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options_for</span>(<span class="ruby-identifier">plugin</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@active_plugins</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">plugin</span>
+    <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;options_for failed; active plugins do not include #{plugin}&quot;</span>)
+    <span class="ruby-keyword">return</span> {}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">plugin</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-operator">||</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options_for-method -->
+
+    
+      <div id="method-i-register_plugins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_plugins</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calls load on all files in the plugins_path ending with “-plugin.rb”.</p>
+          
+
+          
+          <div class="method-source-code" id="register_plugins-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 582</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">register_plugins</span>
+  <span class="ruby-identifier">plugin_directory</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@options</span>[<span class="ruby-value">:plugins_path</span>])
+  <span class="ruby-identifier">plugin_directory</span>.<span class="ruby-identifier">entries</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\w-plugin\.rb$/</span>; <span class="ruby-identifier">load</span> <span class="ruby-identifier">plugin_directory</span><span class="ruby-operator">+</span><span class="ruby-identifier">p</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- register_plugins-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- register_plugins-method -->
+
+    
+      <div id="method-i-send_email" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_email</span><span
+            class="method-args">(data=nil, subject='')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_email-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 665</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">send_email</span>(<span class="ruby-identifier">data</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">subject</span>=<span class="ruby-string">''</span>)
+      <span class="ruby-identifier">debug_message</span>(<span class="ruby-node">&quot;Calling Monitor#send_email.&quot;</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">address</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:email_to</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">validate_address</span>(<span class="ruby-identifier">address</span>) 
+      <span class="ruby-ivar">@data_to_email</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>
+
+      <span class="ruby-identifier">send_the_message</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">difference</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">send_the_message</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@last_message_sent</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">difference</span> = (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_message_sent</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">difference</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:delay_emails_for</span>]
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">send_the_message</span>
+        <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Email data queued because the last email was sent #{difference} seconds ago (waiting until #{@options[:delay_emails_for]}). Email data queue size: #{@data_to_email.size}&quot;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">subj</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:email_subject</span>].<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">subj</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; (#{subject})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">subject</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;From: #{@options[:from_alias]} &lt;#{@options[:from_address]}&gt;
+To: #{address}
+Subject: #{subj}
+
+cgmonitor on #{HOSTNAME} said:
+
+&quot;</span>
+        <span class="ruby-identifier">msg</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{@data_to_email.pop}\n&quot;</span> <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@data_to_email</span>.<span class="ruby-identifier">empty?</span>
+
+        <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Sending email to #{address}&quot;</span>)
+        <span class="ruby-ivar">@last_message_sent</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">SMTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-ivar">@options</span>[<span class="ruby-value">:smtp_host</span>]) { <span class="ruby-operator">|</span><span class="ruby-identifier">smtp</span><span class="ruby-operator">|</span> <span class="ruby-identifier">smtp</span>.<span class="ruby-identifier">send_message</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-ivar">@options</span>[<span class="ruby-value">:from_address</span>], <span class="ruby-identifier">address</span>) }
+        <span class="ruby-identifier">debug_message</span>(<span class="ruby-node">&quot;Monitor#send_email complete.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- send_email-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_email-method -->
+
+    
+      <div id="method-i-send_im" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_im</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_im-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 696</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_im</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">addresses</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:jabber_to</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">address</span><span class="ruby-operator">|</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validate_address</span>(<span class="ruby-identifier">address</span>) }
+  <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;cgmonitor on #{HOSTNAME} said: &quot;</span>
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{data}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Sending IM to: #{addresses.join(', ')}&quot;</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Timeout</span>.<span class="ruby-identifier">timeout</span>(<span class="ruby-value">8</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">jabber</span> = <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">Simple</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@options</span>[<span class="ruby-value">:jabber_id</span>], <span class="ruby-ivar">@options</span>[<span class="ruby-value">:jabber_password</span>])
+      <span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">address</span><span class="ruby-operator">|</span> <span class="ruby-identifier">jabber</span>.<span class="ruby-identifier">deliver</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">msg</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">info_message</span>(<span class="ruby-string">'Error while trying to send IM: '</span><span class="ruby-operator">+</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_im-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_im-method -->
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start monitoring the log files in @<a href="http://:log_paths">options</a>.
+If @<a href="http://:log_paths">options</a> is empty, we monitor @<a
+href="http://:default_log_path">options</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 606</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">trap_signals</span>
+
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:log_paths</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:default_log_path</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:log_paths</span>].<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">threads</span> = []
+  <span class="ruby-keyword">begin</span>
+
+    <span class="ruby-comment"># Start the timers for every_second and every_minute.</span>
+    <span class="ruby-identifier">threads</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-identifier">start_timer</span> }
+
+    <span class="ruby-comment"># Start tailing the log files.</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:log_paths</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">log_path</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">log_path</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">log_path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">log_path</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Pathname</span>
+      <span class="ruby-identifier">threads</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">file</span> = <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-comment"># If there's not a new file in the log path, wait tail_interval</span>
+            <span class="ruby-comment"># and try again; don't wait longer than max_tail_wait.</span>
+            <span class="ruby-keyword">while</span> <span class="ruby-identifier">new_file</span> = <span class="ruby-identifier">log_path</span>.<span class="ruby-identifier">most_recent_file</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">new_file</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span>
+              <span class="ruby-identifier">sleep</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tail_interval</span>]
+              <span class="ruby-ivar">@tail_waiting</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tail_interval</span>]
+              <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tail_waiting</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:max_tail_wait</span>]
+                <span class="ruby-identifier">error_message</span>(<span class="ruby-node">&quot;Waited #{@tail_waiting} seconds for a new log file, but couldn't find one.&quot;</span>)
+                <span class="ruby-identifier">new_file</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">break</span> 
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">file</span> = <span class="ruby-identifier">new_file</span>
+            <span class="ruby-ivar">@tail_waiting</span> = <span class="ruby-value">0</span>
+
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">nil?</span>
+              <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;No recent file was found in path: #{log_path}.&quot;</span>)
+              <span class="ruby-keyword">break</span> 
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;Most recent file: #{file}&quot;</span>)
+
+            <span class="ruby-identifier">debug_message</span>(<span class="ruby-node">&quot;Starting to tail file #{file}.&quot;</span>)
+            <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">Tail</span><span class="ruby-operator">::</span><span class="ruby-constant">Logfile</span>.<span class="ruby-identifier">tail</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value">:backward</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lines_to_rewind</span>], <span class="ruby-value">:interval</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tail_interval</span>]) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">end_of_communigate_file?</span>(<span class="ruby-identifier">line</span>); <span class="ruby-identifier">pass_line_to_plugins</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">file</span>) }
+            <span class="ruby-identifier">debug_message</span>(<span class="ruby-node">&quot;Done tailing file #{file}.&quot;</span>)
+            <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">log_path</span>.<span class="ruby-identifier">file?</span> <span class="ruby-comment"># Don't continue unless there's the chance of a newer file.</span>
+
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+            <span class="ruby-identifier">info_message</span>(<span class="ruby-node">&quot;A file error occurred during monitoring: #{e}&quot;</span>)
+            <span class="ruby-keyword">next</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">threads</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">join</span> }
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">'exit'</span>
+    <span class="ruby-identifier">error_message</span>(<span class="ruby-node">&quot;An exception occurred during monitoring: #{e}&quot;</span>)
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+      <div id="method-i-validate_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_address</span><span
+            class="method-args">(addr)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate_address-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 597</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_address</span>(<span class="ruby-identifier">addr</span>)
+  <span class="ruby-identifier">valid_email</span> = <span class="ruby-regexp">%r\A[\w\._%-]+@[\w\.-]+\.[a-zA-Z]{2,4}\z/</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">addr</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">valid_email</span>
+  <span class="ruby-identifier">warning_message</span>(<span class="ruby-node">&quot;'#{addr}' is not a valid email address.&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate_address-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate_address-method -->
+
+    
+      <div id="method-i-warning_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">warning_message</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="warning_message-source">
+            <pre><span class="ruby-comment"># File cgmonitor, line 552</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">warning_message</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Syslog</span>.<span class="ruby-identifier">warning</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- warning_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- warning_message-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::XMPPElement - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/xmppelement.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../REXML/Element.html">REXML::Element</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-class_for_name_xmlns">::class_for_name_xmlns</a>
+    
+    <li><a href="#method-c-force_xmlns">::force_xmlns</a>
+    
+    <li><a href="#method-c-force_xmlns-3F">::force_xmlns?</a>
+    
+    <li><a href="#method-c-import">::import</a>
+    
+    <li><a href="#method-c-name_xmlns">::name_xmlns</a>
+    
+    <li><a href="#method-c-name_xmlns_for_class">::name_xmlns_for_class</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-clone">#clone</a>
+    
+    <li><a href="#method-i-parent-3D">#parent=</a>
+    
+    <li><a href="#method-i-set_xml_lang">#set_xml_lang</a>
+    
+    <li><a href="#method-i-typed_add">#typed_add</a>
+    
+    <li><a href="#method-i-xml_lang">#xml_lang</a>
+    
+    <li><a href="#method-i-xml_lang-3D">#xml_lang=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::XMPPElement</h1>
+
+  <div id="description" class="description">
+    
+<p>This class represents an XML element and provides functionality for
+automatic casting of XML element classes according to their element name
+and namespace.</p>
+
+<p>Deriving classes must met these criteria:</p>
+<ul><li>
+<p>The element name and namespace must be specified by calling the <a
+href="XMPPElement.html#method-c-name_xmlns">::name_xmlns</a> class method</p>
+</li><li>
+<p>The class constructor must be callable with no mandatory parameter</p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-class_for_name_xmlns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_for_name_xmlns</span><span
+            class="method-args">(name, xmlns)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a class for given name and namespace</p>
+<dl class="rdoc-list note-list"><dt>name
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd></dd></dl>
+</dd><dt>xmlns
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd></dd></dl>
+</dd><dt>result
+<dd>
+<p>A descendant of <a href="XMPPElement.html">XMPPElement</a> or <a
+href="../REXML/Element.html">REXML::Element</a></p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="class_for_name_xmlns-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class_for_name_xmlns</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@name_xmlns_classes</span>.<span class="ruby-identifier">has_key?</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span>]
+    <span class="ruby-identifier">@@name_xmlns_classes</span>[[<span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span>]]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">@@name_xmlns_classes</span>.<span class="ruby-identifier">has_key?</span> [<span class="ruby-identifier">name</span>, <span class="ruby-keyword">nil</span>]
+    <span class="ruby-identifier">@@name_xmlns_classes</span>[[<span class="ruby-identifier">name</span>, <span class="ruby-keyword">nil</span>]]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_for_name_xmlns-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_for_name_xmlns-method -->
+
+    
+      <div id="method-c-force_xmlns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">force_xmlns</span><span
+            class="method-args">(force)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set whether this element is always built with an xmlns attribute</p>
+          
+
+          
+          <div class="method-source-code" id="force_xmlns-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">force_xmlns</span>(<span class="ruby-identifier">force</span>)
+  <span class="ruby-identifier">@@force_xmlns</span> = <span class="ruby-identifier">force</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- force_xmlns-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- force_xmlns-method -->
+
+    
+      <div id="method-c-force_xmlns-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">force_xmlns?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether this element is always built with an xmlns attribute</p>
+          
+
+          
+          <div class="method-source-code" id="force_xmlns-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">force_xmlns?</span>
+  <span class="ruby-identifier">@@force_xmlns</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- force_xmlns-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- force_xmlns-3F-method -->
+
+    
+      <div id="method-c-import" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">import</span><span
+            class="method-args">(element)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Import another <a href="../REXML/Element.html">REXML::Element</a>
+descendant to:</p>
+<ul><li>
+<p>Either an element class that registered with name and xmlns before</p>
+</li><li>
+<p>Or if none was found to the class itself (you may call this class method on
+a deriving class)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="import-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">class_for_name_xmlns</span>(<span class="ruby-identifier">element</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- import-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- import-method -->
+
+    
+      <div id="method-c-name_xmlns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name_xmlns</span><span
+            class="method-args">(name, xmlns=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Specify XML element name and xmlns for a deriving class, this pair and the
+class will be added to a global pool</p>
+
+<p>If the namespace is nil the class is a “wildcard class” matching elements
+with any xmlns if no other class with that namespace was defined</p>
+          
+
+          
+          <div class="method-source-code" id="name_xmlns-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name_xmlns</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">@@name_xmlns_classes</span>[[<span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span>]] = <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name_xmlns-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name_xmlns-method -->
+
+    
+      <div id="method-c-name_xmlns_for_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name_xmlns_for_class</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the name and namespace for a given class. This class must have
+registered these two values by calling <a
+href="XMPPElement.html#method-c-name_xmlns">::name_xmlns</a> at definition
+time.</p>
+
+<p>Raises an exception if none was found</p>
+<dl class="rdoc-list note-list"><dt>klass
+<dd><dl class="rdoc-list label-list"><dt>Class
+<dd></dd></dl>
+</dd><dt>result
+<dd><dl class="rdoc-list label-list"><dt>String, String
+<dd>
+<p>name and namespace</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="name_xmlns_for_class-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name_xmlns_for_class</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass1</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">@@name_xmlns_classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name_xmlns</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">k</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">name_xmlns</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoNameXmlnsRegistered</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">klass</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name_xmlns_for_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name_xmlns_for_class-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize this element, which will then be initialized with the name
+registered with name_xmlns.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">name</span>, <span class="ruby-identifier">xmlns</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span><span class="ruby-operator">::</span><span class="ruby-identifier">name_xmlns_for_class</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>)
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span><span class="ruby-operator">::</span><span class="ruby-identifier">force_xmlns?</span>
+      <span class="ruby-identifier">add_namespace</span>(<span class="ruby-identifier">xmlns</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-clone" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clone</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clone-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">cloned</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">cloned</span>.<span class="ruby-identifier">add_attributes</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">cloned</span>.<span class="ruby-identifier">context</span> = <span class="ruby-ivar">@context</span>
+  <span class="ruby-identifier">cloned</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clone-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clone-method -->
+
+    
+      <div id="method-i-parent-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parent=</span><span
+            class="method-args">(new_parent)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parent-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parent=</span>(<span class="ruby-identifier">new_parent</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">attributes</span>[<span class="ruby-string">'xmlns'</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">add_namespace</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">new_parent</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">new_parent</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>)
+    <span class="ruby-identifier">delete_namespace</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parent-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parent-3D-method -->
+
+    
+      <div id="method-i-set_xml_lang" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_xml_lang</span><span
+            class="method-args">(l)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set XML language attribute (chainable)</p>
+          
+
+          
+          <div class="method-source-code" id="set_xml_lang-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_xml_lang</span>(<span class="ruby-identifier">l</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">xml_lang</span> = <span class="ruby-identifier">l</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_xml_lang-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_xml_lang-method -->
+
+    
+      <div id="method-i-typed_add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">typed_add</span><span
+            class="method-args">(element)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a child element which will be imported according to the child’s name
+and xmlns</p>
+<dl class="rdoc-list note-list"><dt>element
+<dd><dl class="rdoc-list label-list"><dt><a href="../REXML/Element.html">REXML::Element</a>
+<dd>
+<p>Child</p>
+</dd></dl>
+</dd><dt>result
+<dd><dl class="rdoc-list label-list"><dt><a href="../REXML/Element.html">REXML::Element</a> or descendant of <a href="XMPPElement.html">XMPPElement</a>
+<dd>
+<p>New child</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="typed_add-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">typed_add</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>
+    <span class="ruby-identifier">element_ns</span> = (<span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>
+
+    <span class="ruby-identifier">klass</span> = <span class="ruby-constant">XMPPElement</span><span class="ruby-operator">::</span><span class="ruby-identifier">class_for_name_xmlns</span>(<span class="ruby-identifier">element</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">element_ns</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">class</span>
+      <span class="ruby-identifier">element</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">element</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">element</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- typed_add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- typed_add-method -->
+
+    
+      <div id="method-i-xml_lang" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">xml_lang</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generic XML attribute ‘xml:lang’ (<a href="../REXML.html">REXML</a>
+provides no shortcut)</p>
+          
+
+          
+          <div class="method-source-code" id="xml_lang-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xml_lang</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">'xml:lang'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- xml_lang-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- xml_lang-method -->
+
+    
+      <div id="method-i-xml_lang-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">xml_lang=</span><span
+            class="method-args">(l)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set XML language attribute</p>
+          
+
+          
+          <div class="method-source-code" id="xml_lang-3D-source">
+            <pre><span class="ruby-comment"># File xmpp4r/xmppelement.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xml_lang=</span>(<span class="ruby-identifier">l</span>)
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">'xml:lang'</span>] = <span class="ruby-identifier">l</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- xml_lang-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- xml_lang-3D-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

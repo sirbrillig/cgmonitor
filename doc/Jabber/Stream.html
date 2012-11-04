@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::Stream - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/stream.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_iq_callback">#add_iq_callback</a>
+    
+    <li><a href="#method-i-add_message_callback">#add_message_callback</a>
+    
+    <li><a href="#method-i-add_presence_callback">#add_presence_callback</a>
+    
+    <li><a href="#method-i-add_stanza_callback">#add_stanza_callback</a>
+    
+    <li><a href="#method-i-add_xml_callback">#add_xml_callback</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-close-21">#close!</a>
+    
+    <li><a href="#method-i-delete_iq_callback">#delete_iq_callback</a>
+    
+    <li><a href="#method-i-delete_message_callback">#delete_message_callback</a>
+    
+    <li><a href="#method-i-delete_presence_callback">#delete_presence_callback</a>
+    
+    <li><a href="#method-i-delete_stanza_callback">#delete_stanza_callback</a>
+    
+    <li><a href="#method-i-delete_xml_callback">#delete_xml_callback</a>
+    
+    <li><a href="#method-i-is_connected-3F">#is_connected?</a>
+    
+    <li><a href="#method-i-is_disconnected-3F">#is_disconnected?</a>
+    
+    <li><a href="#method-i-on_exception">#on_exception</a>
+    
+    <li><a href="#method-i-parse_failure">#parse_failure</a>
+    
+    <li><a href="#method-i-parser_end">#parser_end</a>
+    
+    <li><a href="#method-i-receive">#receive</a>
+    
+    <li><a href="#method-i-send">#send</a>
+    
+    <li><a href="#method-i-send_data">#send_data</a>
+    
+    <li><a href="#method-i-send_with_id">#send_with_id</a>
+    
+    <li><a href="#method-i-start">#start</a>
+    
+    <li><a href="#method-i-stop">#stop</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Jabber.html">Jabber</a>
+  
+    <li><a href="../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../REXML.html">REXML</a>
+  
+    <li><a href="../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../Pathname.html">Pathname</a>
+  
+    <li><a href="../Pidify.html">Pidify</a>
+  
+    <li><a href="../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::Stream</h1>
+
+  <div id="description" class="description">
+    
+<p>The stream class manages a connection stream (a file descriptor using which
+XML messages are read and sent)</p>
+
+<p>You may register callbacks for the three <a
+href="../Jabber.html">Jabber</a> stanzas (message, presence and iq) and use
+the send and <a href="Stream.html#method-i-send_with_id">#send_with_id</a>
+methods.</p>
+
+<p>To ensure the order of received stanzas, callback blocks are launched in
+the parser thread. If further blocking operations are intended in those
+callbacks, run your own thread there.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CONNECTED">CONNECTED
+        
+        <dd class="description">
+        
+      
+        <dt id="DISCONNECTED">DISCONNECTED
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-fd" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fd</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>file descriptor used</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>connection status</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize a new stream</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@fd</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">DISCONNECTED</span>
+  <span class="ruby-ivar">@xmlcbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@stanzacbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@messagecbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@iqcbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@presencecbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@send_lock</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@last_send</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-ivar">@exception_block</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@threadblocks</span> = []
+  <span class="ruby-ivar">@wakeup_thread</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@streamid</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@streamns</span> = <span class="ruby-string">'jabber:client'</span>
+  <span class="ruby-ivar">@features_sem</span> = <span class="ruby-constant">Semaphore</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@parser_thread</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_iq_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_iq_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a callback block to process received Iqs</p>
+<dl class="rdoc-list note-list"><dt>priority
+<dd><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The callback’s priority, the higher, the sooner</p>
+</dd></dl>
+</dd><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The callback’s reference</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_iq_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 473</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_iq_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@iqcbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_iq_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_iq_callback-method -->
+
+    
+      <div id="method-i-add_message_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_message_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a callback block to process received Messages</p>
+<dl class="rdoc-list note-list"><dt>priority
+<dd><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The callback’s priority, the higher, the sooner</p>
+</dd></dl>
+</dd><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The callback’s reference</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_message_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 419</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_message_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@messagecbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_message_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_message_callback-method -->
+
+    
+      <div id="method-i-add_presence_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_presence_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a callback block to process received Presences</p>
+<dl class="rdoc-list note-list"><dt>priority
+<dd><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The callback’s priority, the higher, the sooner</p>
+</dd></dl>
+</dd><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The callback’s reference</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_presence_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 455</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_presence_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@presencecbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_presence_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_presence_callback-method -->
+
+    
+      <div id="method-i-add_stanza_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_stanza_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a callback block to process received Stanzas</p>
+<dl class="rdoc-list note-list"><dt>priority
+<dd><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The callback’s priority, the higher, the sooner</p>
+</dd></dl>
+</dd><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The callback’s reference</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_stanza_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 437</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_stanza_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@stanzacbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_stanza_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_stanza_callback-method -->
+
+    
+      <div id="method-i-add_xml_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_xml_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a callback block to process received XML messages</p>
+<dl class="rdoc-list note-list"><dt>priority
+<dd><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The callback’s priority, the higher, the sooner</p>
+</dd></dl>
+</dd><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The callback’s reference</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_xml_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_xml_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@xmlcbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_xml_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_xml_callback-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Closes the connection to the <a href="../Jabber.html">Jabber</a> service</p>
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 487</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-identifier">close!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-close-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="close-21-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 491</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close!</span>
+  <span class="ruby-ivar">@parser_thread</span>.<span class="ruby-identifier">kill</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@parser_thread</span>
+  <span class="ruby-ivar">@fd</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fd</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@fd</span>.<span class="ruby-identifier">closed?</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">DISCONNECTED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-21-method -->
+
+    
+      <div id="method-i-delete_iq_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_iq_callback</span><span
+            class="method-args">(ref)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete an <a href="Iq.html">Iq</a> callback</p>
+<dl class="rdoc-list note-list"><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The reference of the callback to delete</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete_iq_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 482</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_iq_callback</span>(<span class="ruby-identifier">ref</span>)
+  <span class="ruby-ivar">@iqcbs</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ref</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_iq_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_iq_callback-method -->
+
+    
+      <div id="method-i-delete_message_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_message_callback</span><span
+            class="method-args">(ref)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete an <a href="Message.html">Message</a> callback</p>
+<dl class="rdoc-list note-list"><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The reference of the callback to delete</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete_message_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 427</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_message_callback</span>(<span class="ruby-identifier">ref</span>)
+  <span class="ruby-ivar">@messagecbs</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ref</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_message_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_message_callback-method -->
+
+    
+      <div id="method-i-delete_presence_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_presence_callback</span><span
+            class="method-args">(ref)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a <a href="Presence.html">Presence</a> callback</p>
+<dl class="rdoc-list note-list"><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The reference of the callback to delete</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete_presence_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_presence_callback</span>(<span class="ruby-identifier">ref</span>)
+  <span class="ruby-ivar">@presencecbs</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ref</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_presence_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_presence_callback-method -->
+
+    
+      <div id="method-i-delete_stanza_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_stanza_callback</span><span
+            class="method-args">(ref)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a Stanza callback</p>
+<dl class="rdoc-list note-list"><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The reference of the callback to delete</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete_stanza_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 445</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_stanza_callback</span>(<span class="ruby-identifier">ref</span>)
+  <span class="ruby-ivar">@stanzacbs</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ref</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_stanza_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_stanza_callback-method -->
+
+    
+      <div id="method-i-delete_xml_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_xml_callback</span><span
+            class="method-args">(ref)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete an XML-messages callback</p>
+<dl class="rdoc-list note-list"><dt>ref
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The reference of the callback to delete</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete_xml_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_xml_callback</span>(<span class="ruby-identifier">ref</span>)
+  <span class="ruby-ivar">@xmlcbs</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ref</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_xml_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_xml_callback-method -->
+
+    
+      <div id="method-i-is_connected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_connected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns if this connection is connected to a <a
+href="../Jabber.html">Jabber</a> service</p>
+<dl class="rdoc-list note-list"><dt>return
+<dd><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p><a href="Connection.html">Connection</a> status</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="is_connected-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_connected?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CONNECTED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_connected-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_connected-3F-method -->
+
+    
+      <div id="method-i-is_disconnected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_disconnected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns if this connection is NOT connected to a <a
+href="../Jabber.html">Jabber</a> service</p>
+<dl class="rdoc-list note-list"><dt>return
+<dd><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p><a href="Connection.html">Connection</a> status</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="is_disconnected-3F-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_disconnected?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">DISCONNECTED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_disconnected-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_disconnected-3F-method -->
+
+    
+      <div id="method-i-on_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_exception</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mounts a block to handle exceptions if they occur during the poll send. 
+This will likely be the first indication that the socket dropped in a <a
+href="../Jabber.html">Jabber</a> Session.</p>
+
+<p>The block has to take three arguments:</p>
+<ul><li>
+<p>the Exception</p>
+</li><li>
+<p>the <a href="Stream.html">Jabber::Stream</a> object (self)</p>
+</li><li>
+<p>a symbol where it happened, namely :start, :parser, :sending and :end</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="on_exception-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_exception</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@exception_block</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_exception-method -->
+
+    
+      <div id="method-i-parse_failure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_failure</span><span
+            class="method-args">(e)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is called by the parser when a failure occurs</p>
+          
+
+          
+          <div class="method-source-code" id="parse_failure-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_failure</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;EXCEPTION:\n#{e.class}\n#{e.message}\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>)
+
+  <span class="ruby-comment"># A new thread has to be created because close will cause the thread</span>
+  <span class="ruby-comment"># to commit suicide(???)</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_block</span>
+    <span class="ruby-comment"># New thread, because close will kill the current thread</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">close</span>
+      <span class="ruby-ivar">@exception_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">e</span>, <span class="ruby-keyword">self</span>, <span class="ruby-value">:parser</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span> <span class="ruby-node">&quot;Stream#parse_failure was called by XML parser. Dumping &quot;</span> <span class="ruby-operator">+</span>
+      <span class="ruby-string">&quot;backtrace...\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">exception</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>
+    <span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_failure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_failure-method -->
+
+    
+      <div id="method-i-parser_end" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parser_end</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is called by the parser upon receiving
+<code>&lt;/stream:stream&gt;</code></p>
+          
+
+          
+          <div class="method-source-code" id="parser_end-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parser_end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_block</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">close</span>
+      <span class="ruby-ivar">@exception_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">self</span>, <span class="ruby-value">:close</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parser_end-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parser_end-method -->
+
+    
+      <div id="method-i-receive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">receive</span><span
+            class="method-args">(element)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Processes a received <a href="../REXML/Element.html">REXML::Element</a> and
+executes registered thread blocks and filters against it.</p>
+<dl class="rdoc-list note-list"><dt>element
+<dd><dl class="rdoc-list label-list"><dt><a href="../REXML/Element.html">REXML::Element</a>
+<dd>
+<p>The received element</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="receive-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">receive</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;RECEIVED:\n#{element.to_s}&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span> <span class="ruby-comment"># REXML namespaces are always strings</span>
+    <span class="ruby-identifier">element</span>.<span class="ruby-identifier">add_namespace</span>(<span class="ruby-ivar">@streamns</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">prefix</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'stream'</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'stream'</span>
+        <span class="ruby-identifier">stanza</span> = <span class="ruby-identifier">element</span>
+        <span class="ruby-ivar">@streamid</span> = <span class="ruby-identifier">element</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'id'</span>]
+        <span class="ruby-ivar">@streamns</span> = <span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">namespace</span>(<span class="ruby-string">''</span>)
+
+        <span class="ruby-comment"># Hack: component streams are basically client streams.</span>
+        <span class="ruby-comment"># Someday we may want to create special stanza classes</span>
+        <span class="ruby-comment"># for components/s2s deriving from normal stanzas but</span>
+        <span class="ruby-comment"># posessing these namespaces</span>
+        <span class="ruby-ivar">@streamns</span> = <span class="ruby-string">'jabber:client'</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@streamns</span> <span class="ruby-operator">==</span> <span class="ruby-string">'jabber:component:accept'</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'version'</span>]  <span class="ruby-comment"># isn't XMPP compliant, so</span>
+          <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-string">&quot;FEATURES: server not XMPP compliant, will not wait for features&quot;</span>)
+          <span class="ruby-ivar">@features_sem</span>.<span class="ruby-identifier">run</span>                   <span class="ruby-comment"># don't wait for &lt;stream:features/&gt;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'features'</span>
+        <span class="ruby-identifier">stanza</span> = <span class="ruby-identifier">element</span>
+        <span class="ruby-identifier">element</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'mechanisms'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">namespace</span> <span class="ruby-operator">==</span> <span class="ruby-string">'urn:ietf:params:xml:ns:xmpp-sasl'</span>
+            <span class="ruby-identifier">e</span>.<span class="ruby-identifier">each_element</span>(<span class="ruby-string">'mechanism'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">mech</span><span class="ruby-operator">|</span>
+              <span class="ruby-ivar">@stream_mechanisms</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">mech</span>.<span class="ruby-identifier">text</span>)
+            }
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-ivar">@stream_features</span>[<span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">namespace</span>
+          <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-string">&quot;FEATURES: received&quot;</span>)
+        <span class="ruby-ivar">@features_sem</span>.<span class="ruby-identifier">run</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">stanza</span> = <span class="ruby-identifier">element</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Any stanza, classes are registered by XMPPElement::name_xmlns</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">stanza</span> = <span class="ruby-constant">XMPPStanza</span><span class="ruby-operator">::</span><span class="ruby-identifier">import</span>(<span class="ruby-identifier">element</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoNameXmlnsRegistered</span>
+      <span class="ruby-identifier">stanza</span> = <span class="ruby-identifier">element</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Iterate through blocked threads (= waiting for an answer)</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># We're dup'ping the @threadblocks here, so that we won't end up in an</span>
+  <span class="ruby-comment"># endless loop if Stream#send is being nested. That means, the nested</span>
+  <span class="ruby-comment"># threadblock won't receive the stanza currently processed, but the next</span>
+  <span class="ruby-comment"># one.</span>
+  <span class="ruby-identifier">threadblocks</span> = <span class="ruby-ivar">@threadblocks</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">threadblocks</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">threadblock</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exception</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">threadblock</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">stanza</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">exception</span> = <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-ivar">@threadblocks</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">threadblock</span>)
+      <span class="ruby-identifier">threadblock</span>.<span class="ruby-identifier">wakeup</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">exception</span>
+      <span class="ruby-ivar">@threadblocks</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">threadblock</span>)
+      <span class="ruby-identifier">threadblock</span>.<span class="ruby-identifier">raise</span>(<span class="ruby-identifier">exception</span>)
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;PROCESSING:\n#{stanza.to_s} (#{stanza.class})&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@xmlcbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">stanza</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stanzacbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">stanza</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">stanza</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Message</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@messagecbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">stanza</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Iq</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@iqcbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">stanza</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Presence</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@presencecbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">stanza</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- receive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- receive-method -->
+
+    
+      <div id="method-i-send" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send</span><span
+            class="method-args">(xml, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sends XML data to the socket and (optionally) waits to process received
+data.</p>
+
+<p>Do not invoke this in a callback but in a seperate thread because we may
+not suspend the parser-thread (in whose context callbacks are executed).</p>
+<dl class="rdoc-list note-list"><dt>xml
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The xml data to send</p>
+</dd></dl>
+</dd><dt>&amp;block
+<dd><dl class="rdoc-list label-list"><dt>Block
+<dd>
+<p>The optional block</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="send-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">xml</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;SENDING:\n#{xml}&quot;</span>)
+  <span class="ruby-ivar">@threadblocks</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">threadblock</span> = <span class="ruby-constant">ThreadBlock</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">block</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-comment"># Temporarily remove stanza's namespace to</span>
+    <span class="ruby-comment"># reduce bandwidth consumption</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">XMPPStanza</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">namespace</span> <span class="ruby-operator">==</span> <span class="ruby-string">'jabber:client'</span>
+      <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">delete_namespace</span>
+      <span class="ruby-identifier">send_data</span>(<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">add_namespace</span>(<span class="ruby-ivar">@streamns</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">send_data</span>(<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;EXCEPTION:\n#{e.class}\n#{e.message}\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>)
+
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_block</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">close!</span>
+        <span class="ruby-ivar">@exception_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">e</span>, <span class="ruby-keyword">self</span>, <span class="ruby-value">:sending</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span> <span class="ruby-node">&quot;Exception caught while sending! (#{e.class})\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>
+      <span class="ruby-identifier">close!</span>
+      <span class="ruby-identifier">raise</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># The parser thread might be running this (think of a callback running send())</span>
+  <span class="ruby-comment"># If this is the case, we mustn't stop (or we would cause a deadlock)</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@parser_thread</span>
+    <span class="ruby-identifier">threadblock</span>.<span class="ruby-identifier">wait</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;WARNING:\nCannot stop current thread in Jabber::Stream#send because it is the parser thread!&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send-method -->
+
+    
+      <div id="method-i-send_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_data</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_data-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_data</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-ivar">@send_lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@last_send</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-ivar">@fd</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+    <span class="ruby-ivar">@fd</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_data-method -->
+
+    
+      <div id="method-i-send_with_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_with_id</span><span
+            class="method-args">(xml) { |received| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Send an XMMP stanza with an <a
+href="XMPPStanza.html#method-i-id">Jabber::XMPPStanza#id</a>. The id will
+be generated by <a href="IdGenerator.html">Jabber::IdGenerator</a> if not
+already set.</p>
+
+<p>The block will be called once: when receiving a stanza with the same <a
+href="XMPPStanza.html#method-i-id">Jabber::XMPPStanza#id</a>. There is no
+need to return true to complete this! Instead the return value of the block
+will be returned. This is a direct result of unique request/response stanza
+identification via the id attribute.</p>
+
+<p>The block may be omitted. Then, the result will be the response stanza.</p>
+
+<p>Be aware that if a stanza with <code>type='error'</code> is received the
+function does not yield but raises an ServerError with the corresponding
+error element.</p>
+
+<p>Please see <a href="Stream.html#method-i-send">#send</a> for some
+implementational details.</p>
+
+<p>Please read the note about nesting at <a
+href="Stream.html#method-i-send">#send</a></p>
+<dl class="rdoc-list note-list"><dt>xml
+<dd><dl class="rdoc-list label-list"><dt><a href="XMPPStanza.html">XMPPStanza</a>
+<dd></dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="send_with_id-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_with_id</span>(<span class="ruby-identifier">xml</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">id</span> = <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">IdGenerator</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">generate_id</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">res</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">error</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">xml</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">received</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">received</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">XMPPStanza</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">received</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">received</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:error</span>
+        <span class="ruby-identifier">error</span> = (<span class="ruby-identifier">received</span>.<span class="ruby-identifier">error</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">received</span>.<span class="ruby-identifier">error</span> <span class="ruby-operator">:</span> <span class="ruby-constant">ErrorResponse</span>.<span class="ruby-identifier">new</span>)
+        <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">res</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">received</span>)
+        <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">received</span>
+        <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ServerError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">error</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_with_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_with_id-method -->
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">(fd)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start the XML parser on the fd</p>
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>(<span class="ruby-identifier">fd</span>)
+  <span class="ruby-ivar">@stream_mechanisms</span> = []
+  <span class="ruby-ivar">@stream_features</span> = {}
+
+  <span class="ruby-ivar">@fd</span> = <span class="ruby-identifier">fd</span>
+  <span class="ruby-ivar">@parser</span> = <span class="ruby-constant">StreamParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fd</span>, <span class="ruby-keyword">self</span>)
+  <span class="ruby-ivar">@parser_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">parse</span>
+      <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-string">&quot;DISCONNECTED\n&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_block</span>
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-identifier">close!</span>; <span class="ruby-ivar">@exception_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">self</span>, <span class="ruby-value">:disconnected</span>) }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">close!</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span>(<span class="ruby-node">&quot;EXCEPTION:\n#{e.class}\n#{e.message}\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_block</span>
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">close</span>
+          <span class="ruby-ivar">@exception_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">e</span>, <span class="ruby-keyword">self</span>, <span class="ruby-value">:start</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-identifier">debuglog</span> <span class="ruby-node">&quot;Exception caught in Parser thread! (#{e.class})\n#{e.backtrace.join(&quot;\n&quot;)}&quot;</span>
+        <span class="ruby-identifier">close!</span>
+        <span class="ruby-identifier">raise</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">CONNECTED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+      <div id="method-i-stop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stop-source">
+            <pre><span class="ruby-comment"># File xmpp4r/stream.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stop</span>
+  <span class="ruby-ivar">@parser_thread</span>.<span class="ruby-identifier">kill</span>
+  <span class="ruby-ivar">@parser</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stop-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

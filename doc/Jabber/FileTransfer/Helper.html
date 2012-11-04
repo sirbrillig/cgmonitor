@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Jabber::FileTransfer::Helper - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>xmpp4r/bytestreams/helper/filetransfer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-accept">#accept</a>
+    
+    <li><a href="#method-i-add_incoming_callback">#add_incoming_callback</a>
+    
+    <li><a href="#method-i-decline">#decline</a>
+    
+    <li><a href="#method-i-offer">#offer</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../init_d/cgmonitor.html">cgmonitor</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Jabber.html">Jabber</a>
+  
+    <li><a href="../../Jabber/ArgumentError.html">Jabber::ArgumentError</a>
+  
+    <li><a href="../../Jabber/Bytestreams.html">Jabber::Bytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBB.html">Jabber::Bytestreams::IBB</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBInitiator.html">Jabber::Bytestreams::IBBInitiator</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBQueueItem.html">Jabber::Bytestreams::IBBQueueItem</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IBBTarget.html">Jabber::Bytestreams::IBBTarget</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqQueryBytestreams.html">Jabber::Bytestreams::IqQueryBytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSi.html">Jabber::Bytestreams::IqSi</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSiFile.html">Jabber::Bytestreams::IqSiFile</a>
+  
+    <li><a href="../../Jabber/Bytestreams/IqSiFileRange.html">Jabber::Bytestreams::IqSiFileRange</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5Bytestreams.html">Jabber::Bytestreams::SOCKS5Bytestreams</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsInitiator.html">Jabber::Bytestreams::SOCKS5BytestreamsInitiator</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsPeer.html">Jabber::Bytestreams::SOCKS5BytestreamsPeer</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsServer.html">Jabber::Bytestreams::SOCKS5BytestreamsServer</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsServerStreamHost.html">Jabber::Bytestreams::SOCKS5BytestreamsServerStreamHost</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5BytestreamsTarget.html">Jabber::Bytestreams::SOCKS5BytestreamsTarget</a>
+  
+    <li><a href="../../Jabber/Bytestreams/SOCKS5Socket.html">Jabber::Bytestreams::SOCKS5Socket</a>
+  
+    <li><a href="../../Jabber/Bytestreams/StreamHost.html">Jabber::Bytestreams::StreamHost</a>
+  
+    <li><a href="../../Jabber/Bytestreams/StreamHostUsed.html">Jabber::Bytestreams::StreamHostUsed</a>
+  
+    <li><a href="../../Jabber/Callback.html">Jabber::Callback</a>
+  
+    <li><a href="../../Jabber/CallbackList.html">Jabber::CallbackList</a>
+  
+    <li><a href="../../Jabber/Caps.html">Jabber::Caps</a>
+  
+    <li><a href="../../Jabber/Caps/C.html">Jabber::Caps::C</a>
+  
+    <li><a href="../../Jabber/Caps/Helper.html">Jabber::Caps::Helper</a>
+  
+    <li><a href="../../Jabber/Client.html">Jabber::Client</a>
+  
+    <li><a href="../../Jabber/ClientAuthenticationFailure.html">Jabber::ClientAuthenticationFailure</a>
+  
+    <li><a href="../../Jabber/Command.html">Jabber::Command</a>
+  
+    <li><a href="../../Jabber/Command/IqCommand.html">Jabber::Command::IqCommand</a>
+  
+    <li><a href="../../Jabber/Command/Responder.html">Jabber::Command::Responder</a>
+  
+    <li><a href="../../Jabber/Component.html">Jabber::Component</a>
+  
+    <li><a href="../../Jabber/ComponentAuthenticationFailure.html">Jabber::ComponentAuthenticationFailure</a>
+  
+    <li><a href="../../Jabber/Connection.html">Jabber::Connection</a>
+  
+    <li><a href="../../Jabber/Dataforms.html">Jabber::Dataforms</a>
+  
+    <li><a href="../../Jabber/Dataforms/XData.html">Jabber::Dataforms::XData</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataField.html">Jabber::Dataforms::XDataField</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataInstructions.html">Jabber::Dataforms::XDataInstructions</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataReported.html">Jabber::Dataforms::XDataReported</a>
+  
+    <li><a href="../../Jabber/Dataforms/XDataTitle.html">Jabber::Dataforms::XDataTitle</a>
+  
+    <li><a href="../../Jabber/Delay.html">Jabber::Delay</a>
+  
+    <li><a href="../../Jabber/Delay/XDelay.html">Jabber::Delay::XDelay</a>
+  
+    <li><a href="../../Jabber/Discovery.html">Jabber::Discovery</a>
+  
+    <li><a href="../../Jabber/Discovery/Feature.html">Jabber::Discovery::Feature</a>
+  
+    <li><a href="../../Jabber/Discovery/Identity.html">Jabber::Discovery::Identity</a>
+  
+    <li><a href="../../Jabber/Discovery/IqQueryDiscoInfo.html">Jabber::Discovery::IqQueryDiscoInfo</a>
+  
+    <li><a href="../../Jabber/Discovery/IqQueryDiscoItems.html">Jabber::Discovery::IqQueryDiscoItems</a>
+  
+    <li><a href="../../Jabber/Discovery/Item.html">Jabber::Discovery::Item</a>
+  
+    <li><a href="../../Jabber/Discovery/Responder.html">Jabber::Discovery::Responder</a>
+  
+    <li><a href="../../Jabber/ErrorResponse.html">Jabber::ErrorResponse</a>
+  
+    <li><a href="../../Jabber/FeatureNegotiation.html">Jabber::FeatureNegotiation</a>
+  
+    <li><a href="../../Jabber/FeatureNegotiation/IqFeature.html">Jabber::FeatureNegotiation::IqFeature</a>
+  
+    <li><a href="../../Jabber/FileTransfer.html">Jabber::FileTransfer</a>
+  
+    <li><a href="../../Jabber/FileTransfer/FileSource.html">Jabber::FileTransfer::FileSource</a>
+  
+    <li><a href="../../Jabber/FileTransfer/Helper.html">Jabber::FileTransfer::Helper</a>
+  
+    <li><a href="../../Jabber/FileTransfer/TransferSource.html">Jabber::FileTransfer::TransferSource</a>
+  
+    <li><a href="../../Jabber/Framework.html">Jabber::Framework</a>
+  
+    <li><a href="../../Jabber/Framework/Base.html">Jabber::Framework::Base</a>
+  
+    <li><a href="../../Jabber/Framework/Bot.html">Jabber::Framework::Bot</a>
+  
+    <li><a href="../../Jabber/HTTPBinding.html">Jabber::HTTPBinding</a>
+  
+    <li><a href="../../Jabber/HTTPBinding/Client.html">Jabber::HTTPBinding::Client</a>
+  
+    <li><a href="../../Jabber/IdGenerator.html">Jabber::IdGenerator</a>
+  
+    <li><a href="../../Jabber/Iq.html">Jabber::Iq</a>
+  
+    <li><a href="../../Jabber/IqQuery.html">Jabber::IqQuery</a>
+  
+    <li><a href="../../Jabber/JID.html">Jabber::JID</a>
+  
+    <li><a href="../../Jabber/JabberError.html">Jabber::JabberError</a>
+  
+    <li><a href="../../Jabber/MUC.html">Jabber::MUC</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCAdmin.html">Jabber::MUC::IqQueryMUCAdmin</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCAdminItem.html">Jabber::MUC::IqQueryMUCAdminItem</a>
+  
+    <li><a href="../../Jabber/MUC/IqQueryMUCOwner.html">Jabber::MUC::IqQueryMUCOwner</a>
+  
+    <li><a href="../../Jabber/MUC/MUCBrowser.html">Jabber::MUC::MUCBrowser</a>
+  
+    <li><a href="../../Jabber/MUC/MUCClient.html">Jabber::MUC::MUCClient</a>
+  
+    <li><a href="../../Jabber/MUC/SimpleMUCClient.html">Jabber::MUC::SimpleMUCClient</a>
+  
+    <li><a href="../../Jabber/MUC/UserItem.html">Jabber::MUC::UserItem</a>
+  
+    <li><a href="../../Jabber/MUC/XMUC.html">Jabber::MUC::XMUC</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUser.html">Jabber::MUC::XMUCUser</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUserInvite.html">Jabber::MUC::XMUCUserInvite</a>
+  
+    <li><a href="../../Jabber/MUC/XMUCUserItem.html">Jabber::MUC::XMUCUserItem</a>
+  
+    <li><a href="../../Jabber/Message.html">Jabber::Message</a>
+  
+    <li><a href="../../Jabber/NoNameXmlnsRegistered.html">Jabber::NoNameXmlnsRegistered</a>
+  
+    <li><a href="../../Jabber/Presence.html">Jabber::Presence</a>
+  
+    <li><a href="../../Jabber/PubSub.html">Jabber::PubSub</a>
+  
+    <li><a href="../../Jabber/PubSub/Configuration.html">Jabber::PubSub::Configuration</a>
+  
+    <li><a href="../../Jabber/PubSub/Event.html">Jabber::PubSub::Event</a>
+  
+    <li><a href="../../Jabber/PubSub/EventItem.html">Jabber::PubSub::EventItem</a>
+  
+    <li><a href="../../Jabber/PubSub/EventItems.html">Jabber::PubSub::EventItems</a>
+  
+    <li><a href="../../Jabber/PubSub/IqPubSub.html">Jabber::PubSub::IqPubSub</a>
+  
+    <li><a href="../../Jabber/PubSub/IqPubSubOwner.html">Jabber::PubSub::IqPubSubOwner</a>
+  
+    <li><a href="../../Jabber/PubSub/Item.html">Jabber::PubSub::Item</a>
+  
+    <li><a href="../../Jabber/PubSub/Items.html">Jabber::PubSub::Items</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeBrowser.html">Jabber::PubSub::NodeBrowser</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeConfig.html">Jabber::PubSub::NodeConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/NodeHelper.html">Jabber::PubSub::NodeHelper</a>
+  
+    <li><a href="../../Jabber/PubSub/OwnerNodeConfig.html">Jabber::PubSub::OwnerNodeConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/Publish.html">Jabber::PubSub::Publish</a>
+  
+    <li><a href="../../Jabber/PubSub/ServiceHelper.html">Jabber::PubSub::ServiceHelper</a>
+  
+    <li><a href="../../Jabber/PubSub/Subscription.html">Jabber::PubSub::Subscription</a>
+  
+    <li><a href="../../Jabber/PubSub/SubscriptionConfig.html">Jabber::PubSub::SubscriptionConfig</a>
+  
+    <li><a href="../../Jabber/PubSub/Unsubscribe.html">Jabber::PubSub::Unsubscribe</a>
+  
+    <li><a href="../../Jabber/RPC.html">Jabber::RPC</a>
+  
+    <li><a href="../../Jabber/RPC/Client.html">Jabber::RPC::Client</a>
+  
+    <li><a href="../../Jabber/RPC/IqQueryRPC.html">Jabber::RPC::IqQueryRPC</a>
+  
+    <li><a href="../../Jabber/RPC/Server.html">Jabber::RPC::Server</a>
+  
+    <li><a href="../../Jabber/Roster.html">Jabber::Roster</a>
+  
+    <li><a href="../../Jabber/Roster/Helper.html">Jabber::Roster::Helper</a>
+  
+    <li><a href="../../Jabber/Roster/Helper/RosterItem.html">Jabber::Roster::Helper::RosterItem</a>
+  
+    <li><a href="../../Jabber/Roster/IqQueryRoster.html">Jabber::Roster::IqQueryRoster</a>
+  
+    <li><a href="../../Jabber/Roster/RosterItem.html">Jabber::Roster::RosterItem</a>
+  
+    <li><a href="../../Jabber/Roster/RosterX.html">Jabber::Roster::RosterX</a>
+  
+    <li><a href="../../Jabber/Roster/RosterXItem.html">Jabber::Roster::RosterXItem</a>
+  
+    <li><a href="../../Jabber/Roster/XRoster.html">Jabber::Roster::XRoster</a>
+  
+    <li><a href="../../Jabber/Roster/XRosterItem.html">Jabber::Roster::XRosterItem</a>
+  
+    <li><a href="../../Jabber/SASL.html">Jabber::SASL</a>
+  
+    <li><a href="../../Jabber/SASL/Anonymous.html">Jabber::SASL::Anonymous</a>
+  
+    <li><a href="../../Jabber/SASL/Base.html">Jabber::SASL::Base</a>
+  
+    <li><a href="../../Jabber/SASL/DigestMD5.html">Jabber::SASL::DigestMD5</a>
+  
+    <li><a href="../../Jabber/SASL/Plain.html">Jabber::SASL::Plain</a>
+  
+    <li><a href="../../Jabber/SOCKS5Error.html">Jabber::SOCKS5Error</a>
+  
+    <li><a href="../../Jabber/Semaphore.html">Jabber::Semaphore</a>
+  
+    <li><a href="../../Jabber/Simple.html">Jabber::Simple</a>
+  
+    <li><a href="../../Jabber/Stream.html">Jabber::Stream</a>
+  
+    <li><a href="../../Jabber/Stream/ThreadBlock.html">Jabber::Stream::ThreadBlock</a>
+  
+    <li><a href="../../Jabber/StreamParser.html">Jabber::StreamParser</a>
+  
+    <li><a href="../../Jabber/UserTune.html">Jabber::UserTune</a>
+  
+    <li><a href="../../Jabber/UserTune/Helper.html">Jabber::UserTune::Helper</a>
+  
+    <li><a href="../../Jabber/UserTune/Tune.html">Jabber::UserTune::Tune</a>
+  
+    <li><a href="../../Jabber/Vcard.html">Jabber::Vcard</a>
+  
+    <li><a href="../../Jabber/Vcard/Helper.html">Jabber::Vcard::Helper</a>
+  
+    <li><a href="../../Jabber/Vcard/IqVcard.html">Jabber::Vcard::IqVcard</a>
+  
+    <li><a href="../../Jabber/Version.html">Jabber::Version</a>
+  
+    <li><a href="../../Jabber/Version/IqQueryVersion.html">Jabber::Version::IqQueryVersion</a>
+  
+    <li><a href="../../Jabber/Version/Responder.html">Jabber::Version::Responder</a>
+  
+    <li><a href="../../Jabber/Version/SimpleResponder.html">Jabber::Version::SimpleResponder</a>
+  
+    <li><a href="../../Jabber/X.html">Jabber::X</a>
+  
+    <li><a href="../../Jabber/XHTML.html">Jabber::XHTML</a>
+  
+    <li><a href="../../Jabber/XHTML/Body.html">Jabber::XHTML::Body</a>
+  
+    <li><a href="../../Jabber/XHTML/HTML.html">Jabber::XHTML::HTML</a>
+  
+    <li><a href="../../Jabber/XMPPElement.html">Jabber::XMPPElement</a>
+  
+    <li><a href="../../Jabber/XMPPStanza.html">Jabber::XMPPStanza</a>
+  
+    <li><a href="../../Jabber/XParent.html">Jabber::XParent</a>
+  
+    <li><a href="../../File.html">File</a>
+  
+    <li><a href="../../File/Tail.html">File::Tail</a>
+  
+    <li><a href="../../File/Tail/BreakException.html">File::Tail::BreakException</a>
+  
+    <li><a href="../../File/Tail/DeletedException.html">File::Tail::DeletedException</a>
+  
+    <li><a href="../../File/Tail/Logfile.html">File::Tail::Logfile</a>
+  
+    <li><a href="../../File/Tail/ReopenException.html">File::Tail::ReopenException</a>
+  
+    <li><a href="../../File/Tail/ReturnException.html">File::Tail::ReturnException</a>
+  
+    <li><a href="../../File/Tail/TailException.html">File::Tail::TailException</a>
+  
+    <li><a href="../../CGMonitor.html">CGMonitor</a>
+  
+    <li><a href="../../CGMonitor/Monitor.html">CGMonitor::Monitor</a>
+  
+    <li><a href="../../CGMonitor/Plugin.html">CGMonitor::Plugin</a>
+  
+    <li><a href="../../REXML.html">REXML</a>
+  
+    <li><a href="../../REXML/Element.html">REXML::Element</a>
+  
+    <li><a href="../../REXML/IOSource.html">REXML::IOSource</a>
+  
+    <li><a href="../../XMLRPC.html">XMLRPC</a>
+  
+    <li><a href="../../XMLRPC/Create.html">XMLRPC::Create</a>
+  
+    <li><a href="../../ActiveBlacklistPlugin.html">ActiveBlacklistPlugin</a>
+  
+    <li><a href="../../AtMailPlugin.html">AtMailPlugin</a>
+  
+    <li><a href="../../Base64.html">Base64</a>
+  
+    <li><a href="../../BlacklistPlugin.html">BlacklistPlugin</a>
+  
+    <li><a href="../../CGPClamAVCrash.html">CGPClamAVCrash</a>
+  
+    <li><a href="../../CGPMcAfeeCounter.html">CGPMcAfeeCounter</a>
+  
+    <li><a href="../../CGPMcAfeeSparkwatcher.html">CGPMcAfeeSparkwatcher</a>
+  
+    <li><a href="../../CGPSpamCatcherCounter.html">CGPSpamCatcherCounter</a>
+  
+    <li><a href="../../CGPSpamCatcherRestart.html">CGPSpamCatcherRestart</a>
+  
+    <li><a href="../../CheckSize.html">CheckSize</a>
+  
+    <li><a href="../../CorruptedMailbox.html">CorruptedMailbox</a>
+  
+    <li><a href="../../EmailStats.html">EmailStats</a>
+  
+    <li><a href="../../FrequentSendersPlugin.html">FrequentSendersPlugin</a>
+  
+    <li><a href="../../FrequentSpammerPlugin.html">FrequentSpammerPlugin</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../MessageThrottleCounterPlugin.html">MessageThrottleCounterPlugin</a>
+  
+    <li><a href="../../Pathname.html">Pathname</a>
+  
+    <li><a href="../../Pidify.html">Pidify</a>
+  
+    <li><a href="../../SendmailBlacklistPlugin.html">SendmailBlacklistPlugin</a>
+  
+    <li><a href="../../SpoofedFromAddressPlugin.html">SpoofedFromAddressPlugin</a>
+  
+    <li><a href="../../SyslogRemotePlugin.html">SyslogRemotePlugin</a>
+  
+    <li><a href="../../TestPlugin.html">TestPlugin</a>
+  
+    <li><a href="../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Jabber::FileTransfer::Helper</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="../FileTransfer.html">FileTransfer</a> helper provides the
+ability to respond to incoming and to offer outgoing file-transfers.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-allow_bytestreams" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">allow_bytestreams</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Set this to false if you don’t want to use SOCKS5Bytestreams</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-allow_ibb" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">allow_ibb</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Set this to false if you don’t want to use IBB</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-my_jid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">my_jid</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Set this if you want to use this helper in a <a
+href="../Component.html">Component</a></p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(stream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="../FileTransfer.html">FileTransfer</a> instance</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File xmpp4r/bytestreams/helper/filetransfer.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">stream</span>)
+  <span class="ruby-ivar">@stream</span> = <span class="ruby-identifier">stream</span>
+  <span class="ruby-ivar">@my_jid</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@allow_bytestreams</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@allow_ibb</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-ivar">@incoming_cbs</span> = <span class="ruby-constant">CallbackList</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">add_iq_callback</span>(<span class="ruby-value">150</span>, <span class="ruby-keyword">self</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">iq</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:set</span>
+      <span class="ruby-identifier">file</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">first_element</span>(<span class="ruby-string">'si/file'</span>)
+      <span class="ruby-identifier">field</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">each_element</span>(<span class="ruby-string">'si/feature/x'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">field</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">field</span>(<span class="ruby-string">'stream-method'</span>) }
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">field</span>
+        <span class="ruby-ivar">@incoming_cbs</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">iq</span>, <span class="ruby-identifier">file</span>)
+        <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-accept" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accept</span><span
+            class="method-args">(iq, offset=nil, length=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Accept an incoming file-transfer, to be used in a block given to <a
+href="Helper.html#method-i-add_incoming_callback">#add_incoming_callback</a></p>
+
+<p>offset and length will be ignored if there is no ‘si/file/range’ in iq.</p>
+<dl class="rdoc-list note-list"><dt>iq
+<dd><dl class="rdoc-list label-list"><dt><a href="../Iq.html">Iq</a>
+<dd>
+<p>of file-transfer we want to accept</p>
+</dd></dl>
+</dd><dt>offset
+<dd><dl class="rdoc-list label-list"><dt>Fixnum
+<dd>
+<p>or [nil]</p>
+</dd></dl>
+</dd><dt>length
+<dd><dl class="rdoc-list label-list"><dt>Fixnum
+<dd>
+<p>or [nil]</p>
+</dd></dl>
+</dd><dt>result
+<dd><dl class="rdoc-list label-list"><dt><a href="../Bytestreams/SOCKS5BytestreamsTarget.html">Bytestreams::SOCKS5BytestreamsTarget</a>
+<dd>
+<p>or [Bytestreams::IBBTarget] or [nil] if no valid stream-method</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="accept-source">
+            <pre><span class="ruby-comment"># File xmpp4r/bytestreams/helper/filetransfer.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accept</span>(<span class="ruby-identifier">iq</span>, <span class="ruby-identifier">offset</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">length</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">oldsi</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">first_element</span>(<span class="ruby-string">'si'</span>)
+
+  <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">answer</span>(<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:result</span>
+
+  <span class="ruby-identifier">si</span> = <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSi</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">offset</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">length</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">oldsi</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>
+    <span class="ruby-identifier">si</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSiFile</span>.<span class="ruby-identifier">new</span>)
+    <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSiFileRange</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">length</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">si</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">FeatureNegotiation</span><span class="ruby-operator">::</span><span class="ruby-constant">IqFeature</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">oldsi</span>.<span class="ruby-identifier">feature</span>))
+  <span class="ruby-identifier">si</span>.<span class="ruby-identifier">feature</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:submit</span>
+  <span class="ruby-identifier">stream_method</span> = <span class="ruby-identifier">si</span>.<span class="ruby-identifier">feature</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">field</span>(<span class="ruby-string">'stream-method'</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_BYTESTREAMS</span>) <span class="ruby-keyword">and</span> <span class="ruby-ivar">@allow_bytestreams</span>
+    <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">values</span> = [<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_BYTESTREAMS</span>]
+    <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">options</span> = []
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">answer</span>)
+
+    <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">SOCKS5BytestreamsTarget</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">oldsi</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">from</span>, <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">to</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBB</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_IBB</span>) <span class="ruby-keyword">and</span> <span class="ruby-ivar">@allow_ibb</span>
+    <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">values</span> = [<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBB</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_IBB</span>]
+    <span class="ruby-identifier">stream_method</span>.<span class="ruby-identifier">options</span> = []
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">answer</span>)
+
+    <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBBTarget</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">oldsi</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">from</span>, <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">to</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">eanswer</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">answer</span>(<span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">eanswer</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:error</span>
+    <span class="ruby-identifier">eanswer</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">ErrorResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'bad-request'</span>)).<span class="ruby-identifier">type</span> = <span class="ruby-value">:cancel</span>
+    <span class="ruby-identifier">eanswer</span>.<span class="ruby-identifier">error</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'no-valid-streams'</span>)).<span class="ruby-identifier">add_namespace</span>(<span class="ruby-string">'http://jabber.org/protocol/si'</span>)
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">eanswer</span>)
+
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accept-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accept-method -->
+
+    
+      <div id="method-i-add_incoming_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_incoming_callback</span><span
+            class="method-args">(priority = 0, ref = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a callback which will be invoked upon an incoming file-transfer</p>
+
+<p>block takes two arguments:</p>
+<ul><li>
+<p><a href="../Iq.html">Iq</a></p>
+</li><li>
+<p><a href="../Bytestreams/IqSiFile.html">Bytestreams::IqSiFile</a> in the <a
+href="../Iq.html">Iq</a></p>
+</li></ul>
+
+<p>You may then invoke accept or decline</p>
+          
+
+          
+          <div class="method-source-code" id="add_incoming_callback-source">
+            <pre><span class="ruby-comment"># File xmpp4r/bytestreams/helper/filetransfer.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_incoming_callback</span>(<span class="ruby-identifier">priority</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">ref</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@incoming_cbs</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">priority</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_incoming_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_incoming_callback-method -->
+
+    
+      <div id="method-i-decline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decline</span><span
+            class="method-args">(iq)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Decline an incoming file-transfer, to be used in a block given to <a
+href="Helper.html#method-i-add_incoming_callback">#add_incoming_callback</a></p>
+<dl class="rdoc-list note-list"><dt>iq
+<dd><dl class="rdoc-list label-list"><dt><a href="../Iq.html">Iq</a>
+<dd>
+<p>of file-transfer we want to decline</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="decline-source">
+            <pre><span class="ruby-comment"># File xmpp4r/bytestreams/helper/filetransfer.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decline</span>(<span class="ruby-identifier">iq</span>)
+  <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">answer</span>(<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:error</span>
+  <span class="ruby-identifier">error</span> = <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">ErrorResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'forbidden'</span>, <span class="ruby-string">'Offer declined'</span>))
+  <span class="ruby-identifier">error</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:cancel</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">answer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- decline-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- decline-method -->
+
+    
+      <div id="method-i-offer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offer</span><span
+            class="method-args">(jid, source, desc=nil, from=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Offer a file to somebody</p>
+
+<p>Will wait for a response from the peer</p>
+
+<p>The result is a stream which you can configure, or nil if the peer
+responded with an invalid stream-method.</p>
+
+<p>May raise an ServerError</p>
+<dl class="rdoc-list note-list"><dt>jid
+<dd><dl class="rdoc-list label-list"><dt><a href="../JID.html">JID</a>
+<dd>
+<p>to send the file to</p>
+</dd></dl>
+</dd><dt>source
+<dd>
+<p>File-transfer source, implementing the <a
+href="FileSource.html">FileSource</a> interface</p>
+</dd><dt>desc
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>or [nil] Optional file description</p>
+</dd></dl>
+</dd><dt>from
+<dd><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>or [nil] Optional jid for components</p>
+</dd></dl>
+</dd><dt>result
+<dd><dl class="rdoc-list label-list"><dt><a href="../Bytestreams/SOCKS5BytestreamsInitiator.html">Bytestreams::SOCKS5BytestreamsInitiator</a>
+<dd>
+<p>or [Bytestreams::IBBInitiator] or [nil]</p>
+</dd></dl>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="offer-source">
+            <pre><span class="ruby-comment"># File xmpp4r/bytestreams/helper/filetransfer.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">offer</span>(<span class="ruby-identifier">jid</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">desc</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">from</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@my_jid</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">jid</span>
+  <span class="ruby-identifier">session_id</span> = <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">IdGenerator</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">generate_id</span>
+
+  <span class="ruby-identifier">offered_methods</span> = {}
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_bytestreams</span>
+    <span class="ruby-identifier">offered_methods</span>[<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_BYTESTREAMS</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_ibb</span>
+    <span class="ruby-identifier">offered_methods</span>[<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBB</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_IBB</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">iq</span> = <span class="ruby-constant">Iq</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:set</span>, <span class="ruby-identifier">jid</span>)
+  <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span>
+  <span class="ruby-identifier">si</span> = <span class="ruby-identifier">iq</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSi</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">session_id</span>, <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">PROFILE_FILETRANSFER</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">mime</span>))
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">si</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSiFile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">size</span>))
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">hash</span> = <span class="ruby-identifier">source</span>.<span class="ruby-identifier">md5</span>
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">date</span> = <span class="ruby-identifier">source</span>.<span class="ruby-identifier">date</span>
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">description</span> = <span class="ruby-identifier">desc</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">desc</span>
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IqSiFileRange</span>.<span class="ruby-identifier">new</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">can_range?</span>
+
+  <span class="ruby-identifier">feature</span> = <span class="ruby-identifier">si</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'feature'</span>))
+  <span class="ruby-identifier">feature</span>.<span class="ruby-identifier">add_namespace</span> <span class="ruby-string">'http://jabber.org/protocol/feature-neg'</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">feature</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Dataforms</span><span class="ruby-operator">::</span><span class="ruby-constant">XData</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:form</span>))
+  <span class="ruby-identifier">stream_method_field</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">add</span>(<span class="ruby-constant">Dataforms</span><span class="ruby-operator">::</span><span class="ruby-constant">XDataField</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'stream-method'</span>, <span class="ruby-value">:list_single</span>))
+  <span class="ruby-identifier">stream_method_field</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">offered_methods</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">stream_method</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send_with_id</span>(<span class="ruby-identifier">iq</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">r</span>
+      <span class="ruby-identifier">si</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">first_element</span>(<span class="ruby-string">'si'</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">si</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">feature</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">feature</span>.<span class="ruby-identifier">x</span>
+        <span class="ruby-identifier">stream_method</span> = <span class="ruby-identifier">si</span>.<span class="ruby-identifier">feature</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">field</span>(<span class="ruby-string">'stream-method'</span>).<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">can_range?</span>
+            <span class="ruby-identifier">source</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">offset</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">offset</span>
+            <span class="ruby-identifier">source</span>.<span class="ruby-identifier">length</span> = <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">length</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">source</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">si</span>.<span class="ruby-identifier">file</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">offset</span>)
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ServerError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">error</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">403</span>  <span class="ruby-comment"># Declined</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stream_method</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_BYTESTREAMS</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@allow_bytestreams</span>
+    <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">SOCKS5BytestreamsInitiator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">session_id</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">jid</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">stream_method</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBB</span><span class="ruby-operator">::</span><span class="ruby-constant">NS_IBB</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@allow_ibb</span>
+    <span class="ruby-constant">Bytestreams</span><span class="ruby-operator">::</span><span class="ruby-constant">IBBInitiator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">session_id</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">jid</span>)
+  <span class="ruby-keyword">else</span>  <span class="ruby-comment"># Target responded with a stream_method we didn't offer</span>
+    <span class="ruby-identifier">eanswer</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">answer</span>
+    <span class="ruby-identifier">eanswer</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">:error</span>
+    <span class="ruby-identifier">eanswer</span>.<span class="ruby-identifier">add</span> <span class="ruby-constant">ErrorResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'bad-request'</span>)
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">eanswer</span>)
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- offer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- offer-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
