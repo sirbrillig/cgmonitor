@@ -1,0 +1,52 @@
+#!/bin/bash
+#
+# chkconfig: 345 85 15
+# description: CGMonitor Daemon
+
+# processname: cgmonitor
+
+CGMONITOR_HOME=/opt/CGScripts/cgmonitor
+SYSCONFIG="$CGMONITOR_HOME/cgmonitor.cfg"
+
+if [ ! -x $CGMONITOR_HOME/cgmonitor ]; then
+  echo "Could not find cgmonitor at $CGMONITOR_HOME."; exit 1
+fi
+if [ ! -r $SYSCONFIG ]; then
+  echo "Could not find cgmonitor config at $SYSCONFIG."; exit 1
+fi
+
+start() {
+  echo -n $"Starting CGMonitor: "
+  cd $CGMONITOR_HOME && ./cgmonitor -c $SYSCONFIG
+  echo
+}
+
+stop() {
+  echo -n $"Stopping CGMonitor: "
+  cd $CGMONITOR_HOME && ./cgmonitor -q
+  echo
+}
+
+case "$1" in
+  start)
+  start
+  ;;
+  stop)
+  stop
+  ;;
+  reload)
+  killall -HUP cgmonitor
+  ;;
+  status)
+  cd $CGMONITOR_HOME && ./cgmonitor -i
+  ;;
+  restart)
+  stop
+  start
+  ;;
+  *)
+  echo $"Usage: $0 {start|stop|restart|status|reload}"
+  RETVAL=1
+esac
+
+exit $RETVAL 
